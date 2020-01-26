@@ -1,7 +1,7 @@
 package q172.f2;
 
 /**
- * 基础方法一，寻找5出现的规律o(log(n))
+ * 基于方法一，寻找5出现的规律o(log(n))
  */
 public class Solution {
     public int trailingZeroes(int n) {

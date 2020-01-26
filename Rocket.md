@@ -21,20 +21,6 @@ FastLeaderElection(默认提供的选举算法):
 (4)服务器4启动，给自己投票，同时与之前启动的服务器1,2,3交换信息，尽管服务器4的编号大，但之前服务器3已经胜出，所以服务器4只能成为follower。
 (5)服务器5启动，后面的逻辑同服务器4成为follower。
 
-4. 节点类型：
-
-(1)持久
-(2)持久顺序
-(3)临时
-(4)临时顺序
-
-5. 如何保证事务的顺序一致性
-
-(1)Leader为每个请求生成zxid，下发proposal给Follower，Follower会将请求写入到pendingTxns阻塞队列及txnLog中，然后发送ack给Leader。
-(2)ack过半，Leader发送commit请求给所有Follower，Follower对比commit request的zxid和前面提到的pendingTxns的zxid，不一致的话Follower退出，重新跟Leader同步。
-(3)Follower处理commit请求，如果不是本Follower提交的写请求，直接调用FinalRequestProcessor做持久化，触发watches；如果是本Follower提交，则做一些特殊处理（主要针对客户端连接断开的场景），然后调用FinalRequestProcessor等后续处理流程。
-(4)FinalRequestProcessor做持久化，返回客户端。
-
 ## Redis
 
 1. 应用场景
@@ -127,6 +113,11 @@ Redis默认是快照RDB的持久化方式。
 
 先更新数据库，再删缓存。数据库的读操作的速度远快于写操作的，所以脏数据很难出现。可以对异步延时删除策略，保证读请求完成以后，再进行删除操作。
 
+12. Redis的管道pipeline
+
+对于单线程阻塞式的Redis，Pipeline可以满足批量的操作，把多个命令连续的发送给Redis Server，然后一一解析响应结果。Pipelining可以提高批量处理性能，提升的原因主要是TCP连接中减少了“交互往返”的时间。
+pipeline 底层是通过把所有的操作封装成流，redis有定义自己的出入输出流。在 sync() 方法执行操作，每次请求放在队列里面，解析响应包。
+
 ## Mysql
 
 1. 事务的基本要素
@@ -150,8 +141,10 @@ Redis默认是快照RDB的持久化方式。
 可重复读	    |   否  |    否      |是
 串行化	    |   否	|    否      |否  
 
+幻读：select某记录是否存在，不存在，准备插入此记录，但执行 insert 时发现此记录已存在，无法插入，此时就发生了幻读。
+
 在MySQL可重复读的隔离级别中并不是完全解决了幻读的问题，而是解决了读数据情况下的幻读问题。而对于修改的操作依旧存在幻读问题，就是说MVCC对于幻读的解决时不彻底的。
-通过索引加锁，间隙锁可以解决幻读的问题。
+通过索引加锁，间隙锁，next key lock可以解决幻读的问题。
 
 5. Mysql的逻辑结构
 
@@ -212,6 +205,13 @@ Read View判断行的可见性，创建一个新事务时，copy一份当前系�
 (4)where对null判断 
 (5)where不等于
 (6)or操作有至少一个字段没有索引
+
+11. 数据库优化指南
+
+(1)创建并使用正确的索引
+(2)只返回需要的字段
+(3)减少交互次数（批量提交）
+(4)设置合理的Fetch Size（数据每次返回给客户端的条数）
 
 11. Mysql排序原理
 
@@ -319,6 +319,8 @@ Java并发包为了解决这个问题，提供了一个带有标记的原子引�
 
 10. synchronized（非公平，可重入）,ReentrantLock与AQS
 
+AQS内部有3个对象，一个是state（用于计数器，类似gc的回收计数器），一个是线程标记（当前线程是谁加锁的），一个是阻塞队列
+
 11. AtomicInteger
 
 12. i++操作的字节码指令
@@ -348,6 +350,8 @@ Map接口和Collection接口是所有集合框架的父接口：
 
 由于HashMap是线程不同步的，虽然处理数据的效率高，但是在多线程的情况下存在着安全问题，因此设计了CurrentHashMap来解决多线程安全问题。
 HashMap在put的时候，插入的元素超过了容量（由负载因子决定）的范围就会触发扩容操作，就是rehash，这个会重新将原数组的内容重新hash到新的扩容数组中，在多线程的环境下，存在同时其他的元素也在进行put操作，如果hash值相同，可能出现同时在同一数组下用链表表示，造成闭环，导致在get时会出现死循环，所以HashMap是线程不安全的。
+
+HashMap的环：若当前线程此时获得ertry节点，但是被线程中断无法继续执行，此时线程二进入transfer函数，并把函数顺利执行，此时新表中的某个位置有了节点，之后线程一获得执行权继续执行，因为并发transfer，所以两者都是扩容的同一个链表，当线程一执行到e.next = new table[i] 的时候，由于线程二之前数据迁移的原因导致此时new table[i] 上就有ertry存在，所以线程一执行的时候，会将next节点，设置为自己，导致自己互相使用next引用对方，因此产生链表，导致死循环。
 
 在JDK1.7版本中，ConcurrentHashMap维护了一个Segment数组，Segment这个类继承了重入锁ReentrantLock，并且该类里面维护了一个 HashEntry<K,V>[] table数组，在写操作put，remove，扩容的时候，会对Segment加锁，所以仅仅影响这个Segment，不同的Segment还是可以并发的，所以解决了线程的安全问题，同时又采用了分段锁也提升了并发的效率。
 在JDK1.8版本中，ConcurrentHashMap摒弃了Segment的概念，而是直接用Node数组+链表+红黑树的数据结构来实现，并发控制使用Synchronized和CAS来操作，整个看起来就像是优化过且线程安全的HashMap。
@@ -432,24 +436,16 @@ Pull有个缺点是，如果broker没有可供消费的消息，将导致consume
 
 实时返回，返回值，消费策略（速度）
 
-## Spring
+## Dubbo
 
-1. Bean的生命周期
+1. Dubbo的容错机制
 
-(1)实例化一个Bean，也就是我们通常说的new
-(2)按照Spring上下文对实例化的Bean进行配置，也就是IOC注入
-(3)如果这个Bean实现了BeanNameAware接口，会调用它实现的setBeanName(String beanId)方法，此处传递的是Spring配置文件中Bean的ID
-(4)如果这个Bean实现了BeanFactoryAware接口，会调用它实现的setBeanFactory()，传递的是Spring工厂本身
-(5)如果这个Bean实现了ApplicationContextAware接口，会调用setApplicationContext(ApplicationContext)方法，传入Spring上下文，该方式同样可以实现步骤4，但比4更好，以为ApplicationContext是BeanFactory的子接口，有更多的实现方法
-(6)如果这个Bean关联了BeanPostProcessor接口，将会调用postProcessBeforeInitialization(Object obj, String s)方法，BeanPostProcessor经常被用作是Bean内容的更改，并且由于这个是在Bean初始化结束时调用After方法，也可用于内存或缓存技术
-(7)如果这个Bean在Spring配置文件中配置了init-method属性会自动调用其配置的初始化方法
-(8)如果这个Bean关联了BeanPostProcessor接口，将会调用postAfterInitialization(Object obj, String s)方法
-(9)当Bean不再需要时，会经过清理阶段，如果Bean实现了DisposableBean接口，会调用其实现的destroy方法
-(10)最后，如果这个Bean的Spring配置中配置了destroy-method属性，会自动调用其配置的销毁方法
-
-2.Final类的动态代理
-
-cglib是基于继承的方式实现类的动态代理，因此无法实现对final方法的代理。（JDK是通过反射）
+(1)失败自动切换，当出现失败，重试其它服务器。通常用于读操作，但重试会带来更长延迟。可通过 retries="2" 来设置重试次数
+(2)快速失败，只发起一次调用，失败立即报错。通常用于非幂等性的写操作，比如新增记录。
+(3)失败安全，出现异常时，直接忽略。通常用于写入审计日志等操作。
+(4)失败自动恢复，后台记录失败请求，定时重发。通常用于消息通知操作。
+(5)并行调用多个服务器，只要一个成功即返回。通常用于实时性要求较高的读操作，但需要浪费更多服务资源。可通过 forks="2" 来设置最大并行数。
+(6)广播调用所有提供者，逐个调用，任意一台报错则报错。通常用于通知所有提供者更新缓存或日志等本地资源信息
 
 ## 计算机网路
 
@@ -486,7 +482,11 @@ UDP的优点： 快，比TCP稍安全 UDP没有TCP的握手、确认、窗口、
 第二次握手：服务器收到syn包，必须确认客户的SYN（ack=x+1），同时自己也发送一个SYN包（syn=y），即SYN+ACK包，此时服务器进入SYN_RECV状态；
 第三次握手：客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK(ack=y+1），此包发送完毕，客户端和服务器进入ESTABLISHED（TCP连接成功）状态，完成三次握手。
 
-5. 四次挥手
+5. 为什么不能两次握手
+
+TCP是一个双向通信协议，通信双方都有能力发送信息，并接收响应。如果只是两次握手， 至多只有连接发起方的起始序列号能被确认， 另一方选择的序列号则得不到确认
+
+6. 四次挥手
 
 (1)客户端进程发出连接释放报文，并且停止发送数据。释放数据报文首部，FIN=1，其序列号为seq=u（等于前面已经传送过来的数据的最后一个字节的序号加1），此时，客户端进入FIN-WAIT-1（终止等待1）状态。 TCP规定，FIN报文段即使不携带数据，也要消耗一个序号。
 (2)服务器收到连接释放报文，发出确认报文，ACK=1，ack=u+1，并且带上自己的序列号seq=v，此时，服务端就进入了CLOSE-WAIT（关闭等待）状态。TCP服务器通知高层的应用进程，客户端向服务器的方向就释放了，这时候处于半关闭状态，即客户端已经没有数据要发送了，但是服务器若发送数据，客户端依然要接受。这个状态还要持续一段时间，也就是整个CLOSE-WAIT状态持续的时间。
@@ -495,7 +495,7 @@ UDP的优点： 快，比TCP稍安全 UDP没有TCP的握手、确认、窗口、
 (5)客户端收到服务器的连接释放报文后，必须发出确认，ACK=1，ack=w+1，而自己的序列号是seq=u+1，此时，客户端就进入了TIME-WAIT（时间等待）状态。注意此时TCP连接还没有释放，必须经过2∗∗MSL（最长报文段寿命）的时间后，当客户端撤销相应的TCB后，才进入CLOSED状态。
 (6)服务器只要收到了客户端发出的确认，立即进入CLOSED状态。同样，撤销TCB后，就结束了这次的TCP连接。可以看到，服务器结束TCP连接的时间要比客户端早一些
 
-6. 为什么连接的时候是三次握手，关闭的时候却是四次握手
+7. 为什么连接的时候是三次握手，关闭的时候却是四次握手
 
 因为当Server端收到Client端的SYN连接请求报文后，可以直接发送SYN+ACK报文。其中ACK报文是用来应答的，SYN报文是用来同步的。但是关闭连接时，当Server端收到FIN报文时，很可能并不会立即关闭SOCKET，所以只能先回复一个ACK报文，告诉Client端，"你发的FIN报文我收到了"。只有等到我Server端所有的报文都发送完了，我才能发送FIN报文，因此不能一起发送。故需要四步握手。
 
