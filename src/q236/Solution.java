@@ -1,7 +1,7 @@
 package q236;
 
 /**
- * LCA二叉树的最近公共祖先（递归）
+ * LCA二叉树的最近公共祖先（递归）o(n)
  */
 class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
