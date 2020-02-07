@@ -2,6 +2,9 @@ package q20;
 
 import java.util.Stack;
 
+/**
+ * 利用栈 o(n)
+ */
 public class Solution {
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
