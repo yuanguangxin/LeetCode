@@ -1,4 +1,4 @@
-package q98;
+package q98.f1;
 
 public class TreeNode {
     int val;

@@ -1,32 +1,32 @@
 package q98.f2;
 
-import java.util.Stack;
-
+/**
+ * 寻找上下界递归 o(n)
+ */
 public class Solution {
-    public boolean isValidBST(TreeNode root) {
-        Stack<TreeNode> stack = new Stack<>();
-        while (!stack.empty() || root != null) {
-            while (root != null) {
-                stack.push(root);
-                root = root.left;
-            }
-            root = stack.pop();
-            System.out.println(root.val);
-            root = root.right;
+    public boolean valid(TreeNode root, Integer min, Integer max) {
+        if (root == null) {
+            return true;
+        }
+        int val = root.val;
+
+        if (min != null && val <= min) {
+            return false;
+        }
+        if (max != null && val >= max) {
+            return false;
+        }
+
+        if (!valid(root.left, min, val)) {
+            return false;
+        }
+        if (!valid(root.right, val, max)) {
+            return false;
         }
         return true;
     }
 
-    public static void main(String[] args) {
-        TreeNode root = new TreeNode(5);
-        TreeNode n1 = new TreeNode(1);
-        TreeNode n2 = new TreeNode(4);
-        root.left = n1;
-        root.right = n2;
-        TreeNode n3 = new TreeNode(3);
-        TreeNode n4 = new TreeNode(6);
-        n2.left = n3;
-        n2.right = n4;
-        System.out.println(new Solution().isValidBST(root));
+    public boolean isValidBST(TreeNode root) {
+        return valid(root, null, null);
     }
 }

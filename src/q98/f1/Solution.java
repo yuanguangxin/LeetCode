@@ -1,4 +1,4 @@
-package q98;
+package q98.f1;
 
 import java.util.ArrayList;
 import java.util.List;
