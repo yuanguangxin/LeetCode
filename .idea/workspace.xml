@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Interviewing.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/q10/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/q110/q2/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/q110/q2/TreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/q22/f1/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/q22/f2/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rocket.md" beforeDir="false" afterPath="$PROJECT_DIR$/Rocket.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/q110/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q110/q1/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/q110/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q110/q1/TreeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/q94/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q94/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/q10/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q10/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/q746/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/q746/Solution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +218,7 @@
       <workItem from="1580044287086" duration="50376000" />
       <workItem from="1580562331089" duration="8289000" />
       <workItem from="1580626297484" duration="35811000" />
-      <workItem from="1581061282899" duration="68429000" />
+      <workItem from="1581061282899" duration="68993000" />
     </task>
     <task id="LOCAL-00001" summary="add q5/q7/q172">
       <created>1580045439607</created>
@@ -340,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581519773712</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="update md">
+      <created>1581704713975</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1581704713975</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,7 +362,8 @@
     <MESSAGE value="add q110/q450/q701" />
     <MESSAGE value="add q1277" />
     <MESSAGE value="add q42" />
-    <option name="LAST_COMMIT_MESSAGE" value="add q42" />
+    <MESSAGE value="update md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="115" key="#Inspections" timestamp="1581061018990">
@@ -378,14 +378,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1578548165321" />
-    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1581704695669">
+    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1581704713389">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1581704695669" />
-    <state x="144" y="78" key="DiffContextDialog" timestamp="1581704670225">
+    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1581704713389" />
+    <state x="144" y="78" key="DiffContextDialog" timestamp="1581704720088">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="144" y="78" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1581704670225" />
+    <state x="144" y="78" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1581704720088" />
     <state width="1398" height="177" key="GridCell.Tab.0.bottom" timestamp="1581704695726">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -430,10 +430,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1581061096545" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1581519775156">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1581704721326">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1581519775156" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1581704721326" />
     <state x="378" y="207" width="683" height="486" key="find.popup" timestamp="1581572590737">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

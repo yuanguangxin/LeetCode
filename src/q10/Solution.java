@@ -1,57 +1,20 @@
 package q10;
 
+/**
+ * 回溯法 对于*字符，可以直接忽略模式串中这一部分，或者删除匹配串的第一个字符，前提是它能够匹配模式串当前位置字符，即 pattern[0]。如果两种操作中有任何一种使得剩下的字符串能匹配，那么初始时，匹配串和模式串就可以被匹配。
+ */
 public class Solution {
-    public boolean isMatch(String s, String p) {
-        int i = 0;
-        int j = 0;
-        while (i < s.length()) {
-            char sc = s.charAt(i);
-            if (j >= p.length()) {
-                return false;
-            }
-            char pc = p.charAt(j);
+    public boolean isMatch(String text, String pattern) {
+        if (pattern.isEmpty()) return text.isEmpty();
+        boolean firstMatch = (!text.isEmpty() &&
+                (pattern.charAt(0) == text.charAt(0) || pattern.charAt(0) == '.'));
 
-            if (j + 1 < p.length()) {
-                if (p.charAt(j + 1) == '*') {
-                    if (pc == '.') {
-                        j+=2;
-                        break;
-                    } else if (pc == sc) {
-                        while (i < s.length() && s.charAt(i) == pc) {
-                            i++;
-                        }
-                    }
-                    j += 2;
-                } else {
-                    if ((sc == pc) || (pc == '.')) {
-                        i++;
-                        j++;
-                    } else {
-                        return false;
-                    }
-                }
-            } else {
-                if ((sc == pc) || (pc == '.')) {
-                    i++;
-                    j++;
-                } else {
-                    return false;
-                }
-            }
+        if (pattern.length() >= 2 && pattern.charAt(1) == '*') {
+            return (isMatch(text, pattern.substring(2)) ||
+                    (firstMatch && isMatch(text.substring(1), pattern)));
+        } else {
+            return firstMatch && isMatch(text.substring(1), pattern.substring(1));
         }
-
-        while (j < p.length()) {
-            if (p.charAt(j) == '*') {
-                j++;
-            } else {
-                if (j + 1 < p.length() && p.charAt(j) == '*') {
-                    j += 2;
-                } else {
-                    return false;
-                }
-            }
-        }
-        return true;
     }
 
     public static void main(String[] args) {
