@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 暴力法舍弃空间
+ * 暴力法舍弃空间 o(n)
  */
 class Solution {
     public ListNode reverseList(ListNode head) {

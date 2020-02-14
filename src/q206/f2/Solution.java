@@ -1,7 +1,7 @@
 package q206.f2;
 
 /**
- * 遍历直接反向修改next指针
+ * 遍历直接反向修改next指针 o(n)
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
