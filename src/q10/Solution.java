@@ -5,7 +5,9 @@ package q10;
  */
 public class Solution {
     public boolean isMatch(String text, String pattern) {
-        if (pattern.isEmpty()) return text.isEmpty();
+        if (pattern.isEmpty()){
+            return text.isEmpty();
+        }
         boolean firstMatch = (!text.isEmpty() &&
                 (pattern.charAt(0) == text.charAt(0) || pattern.charAt(0) == '.'));
 
