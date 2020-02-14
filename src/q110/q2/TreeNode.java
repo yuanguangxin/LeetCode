@@ -1,4 +1,4 @@
-package q110;
+package q110.q2;
 
 public class TreeNode {
     int val;

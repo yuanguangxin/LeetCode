@@ -1,7 +1,7 @@
-package q110;
+package q110.q1;
 
 /**
- * o(n^2) 可修改getHeight()，在求树高后先判断是否平衡，将复杂度降为o(n)
+ * 从顶至底遍历 o(n^2)
  */
 public class Solution {
 

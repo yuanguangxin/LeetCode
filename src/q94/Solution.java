@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * 非递归 o(n)
+ */
 public class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> rs = new ArrayList<>();
