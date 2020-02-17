@@ -1,4 +1,4 @@
-package 树的遍历.q110_平衡二叉树.q1;
+package 树的遍历.q110_平衡二叉树.f1;
 
 public class TreeNode {
     int val;
