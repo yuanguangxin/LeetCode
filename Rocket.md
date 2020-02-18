@@ -139,6 +139,18 @@ Redis默认是快照RDB的持久化方式。对于主从同步来说，主从刚
 * MVCC多版本并发控制是MySQL中基于乐观锁理论实现隔离级别的方式，用于读已提交和可重复读取隔离级别的实现。在MySQL中，会在表中每一条数据后面添加两个字段：最近修改该行数据的事务ID，指向该行（undolog表中）回滚段的指针。Read View判断行的可见性，创建一个新事务时，copy一份当前系统中的活跃事务列表。意思是，当前不应该被本事务看到的其他事务id列表。
 * binlog由Mysql的Server层实现,是逻辑日志,记录的是sql语句的原始逻辑，比如"把id='B' 修改为id = ‘B2’。binlog会写入指定大小的物理文件中,是追加写入的,当前文件写满则会创建新的文件写入。 产生:事务提交的时候,一次性将事务中的sql语句,按照一定的格式记录到binlog中。用于复制和恢复在主从复制中，从库利用主库上的binlog进行重播(执行日志中记录的修改逻辑),实现主从同步。业务数据不一致或者错了，用binlog恢复。
 
+### binlog和redolog的区别
+
+1. redolog是在InnoDB存储引擎层产生，而binlog是MySQL数据库的上层服务层产生的。
+2. 两种日志记录的内容形式不同。MySQL的binlog是逻辑日志，其记录是对应的SQL语句。而innodb存储引擎层面的重做日志是物理日志。
+3. 两种日志与记录写入磁盘的时间点不同，binlog日志只在事务提交完成后进行一次写入。而innodb存储引擎的重做日志在事务进行中不断地被写入，并日志不是随事务提交的顺序进行写入的。
+4. binlog不是循环使用，在写满或者重启之后，会生成新的binlog文件，redolog是循环使用。
+5. binlog可以作为恢复数据使用，主从复制搭建，redolog作为异常宕机或者介质故障后的数据恢复使用。
+
+### Mysql如何保证一致性和持久性
+
+MySQL为了保证ACID中的一致性和持久性，使用了WAL(Write-Ahead Logging,先写日志再写磁盘)。Redo log就是一种WAL的应用。当数据库忽然掉电，再重新启动时，MySQL可以通过Redo log还原数据。也就是说，每次事务提交时，不用同步刷新磁盘数据文件，只需要同步刷新Redo log就足够了。
+
 ### InnoDB的行锁模式
 
 * 共享锁(S)：用法lock in share mode，又称读锁，允许一个事务去读一行，阻止其他事务获得相同数据集的排他锁。若事务T对数据对象A加上S锁，则事务T可以读A但不能修改A，其他事务只能再对A加S锁，而不能加X锁，直到T释放A上的S锁。这保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。
@@ -240,6 +252,15 @@ HotSpot JVM把年轻代分为了三部分：1个Eden区和2个Survivor区（分�
 
 双亲委派的意思是如果一个类加载器需要加载类，那么首先它会把这个类请求委派给父类加载器去完成，每一层都是如此。一直递归到顶层，当父加载器无法完成这个请求时，子类才会尝试去加载。
 
+### JVM锁优化和膨胀过程
+
+1. 自旋锁：自旋锁其实就是在拿锁时发现已经有线程拿了锁，自己如果去拿会阻塞自己，这个时候会选择进行一次忙循环尝试。也就是不停循环看是否能等到上个线程自己释放锁。自适应自旋锁指的是例如第一次设置最多自旋10次，结果在自旋的过程中成功获得了锁，那么下一次就可以设置成最多自旋20次。
+2. 锁粗化：虚拟机通过适当扩大加锁的范围以避免频繁的拿锁释放锁的过程。
+3. 锁消除：通过逃逸分析发现其实根本就没有别的线程产生竞争的可能（别的线程没有临界量的引用），或者同步块内进行的是原子操作，而“自作多情”地给自己加上了锁。有可能虚拟机会直接去掉这个锁。
+4. 偏向锁：在大多数的情况下，锁不仅不存在多线程的竞争，而且总是由同一个线程获得。因此为了让线程获得锁的代价更低引入了偏向锁的概念。偏向锁的意思是如果一个线程获得了一个偏向锁，如果在接下来的一段时间中没有其他线程来竞争锁，那么持有偏向锁的线程再次进入或者退出同一个同步代码块，不需要再次进行抢占锁和释放锁的操作。
+5. 轻量级锁：当存在超过一个线程在竞争同一个同步代码块时，会发生偏向锁的撤销。当前线程会尝试使用CAS来获取锁，当自旋超过指定次数(可以自定义)时仍然无法获得锁，此时锁会膨胀升级为重量级锁。
+6. 重量级锁：重量级锁依赖对象内部的monitor锁来实现，而monitor又依赖操作系统的MutexLock（互斥锁）。当系统检查到是重量级锁之后，会把等待想要获取锁的线程阻塞，被阻塞的线程不会消耗CPU，但是阻塞或者唤醒一个线程，都需要通过操作系统来实现。
+
 ### 什么情况下需要开始类加载过程的第一个阶段加载
 
 1. 遇到new、getstatic、putstatic或invokestatic这4条字节码指令时，如果类没有进行过初始化，则需要先触发其初始化。生成这4条指令的最常见的Java代码场景是：使用new关键字实例化对象的时候、读取或设置一个类的静态字段（被final修饰、已在编译期把结果放入常量池的静态字段除外）的时候，以及调用一个类的静态方法的时候。
@@ -333,6 +354,57 @@ HashSet的value存的是一个static finial PRESENT = newObject()。而HashSet�
 
 未精确定义字节。Java语言表达式所操作的boolean值，在编译之后都使用Java虚拟机中的int数据类型来代替，而boolean数组将会被编码成Java虚拟机的byte数组，每个元素boolean元素占8位。
 
+## Spring
+
+### 什么是三级缓存
+
+1. 第一级缓存：单例缓存池singletonObjects。
+2. 第二级缓存：早期提前暴露的对象缓存earlySingletonObjects。（属性还没有值对象也没有被初始化）
+3. 第三级缓存：singletonFactories单例对象工厂缓存。
+
+### 创建Bean的整个过程
+
+1. getBean方法肯定不陌生，必经之路，然后调用doGetBean，进来以后首先会执行transformedBeanName找别名，看你的Bean上面是否起了别名。然后进行很重要的一步，getSingleton，这段代码就是从你的单例缓存池中获取Bean的实例。那么你第一次进来肯定是没有的，缓存里肯定是拿不到的。也就是一级缓存里是没有的。那么它怎么办呢？他会尝试去二级缓存中去拿，但是去二级缓存中拿并不是无条件的，首先要判断isSingletonCurrentlyInCreation(beanName)他要看你这个对象是否正在创建当中，如果不是直接就退出该方法，如果是的话，他就会去二级缓存earlySingletonObjects里面取，如果没拿到，它还接着判断allowEarlyReference这个东西是否为true。它的意思是说，是否允许让你从单例工厂对象缓存中去拿对象。默认为true。好了，此时如果进来那么就会通过singletonFactory.getObject()去单例工厂缓存中去拿。然后将缓存级别提升至二级缓存也就早期暴露的缓存。
+2. getSingleton执行完以后会走dependsOn方法，判断是否有dependsOn标记的循环引用，有的话直接卡死，抛出异常。比如说A依赖于B，B依赖于A 通过dependsOn注解去指定。此时执行到这里就会抛出异常。这里所指并非是构造函数的循环依赖。
+3. beforeSingletonCreation在这里方法里。就把你的对象标记为了早期暴露的对象。提前暴露对象用于创建Bean的实例。
+4. 紧接着就走创建Bean的流程开始。在创建Bean之前执行了一下resolveBeforeInstantiation。它的意思是说，代理AOPBean定义注册信息但是这里并不是实际去代理你的对象，因为对象还没有被创建。只是代理了Bean定义信息，还没有被实例化。把Bean定义信息放进缓存，以便我想代理真正的目标对象的时候，直接去缓存里去拿。
+5. 接下来就真正的走创建Bean流程，首先走进真正做事儿的方法doCreateBean然后找到createBeanInstance这个方法，在这里面它将为你创建你的Bean实例信息（Bean的实例）。如果说创建成功了，那么就把你的对象放入缓存中去（将创建好的提前曝光的对象放入singletonFactories三级缓存中）将对象从二级缓存中移除因为它已经不是提前暴露的对象了。但是。如果说在createBeanInstance这个方法中在创建Bean的时候它会去检测你的依赖关系，会去检测你的构造器。然后，如果说它在创建A对象的时候，发现了构造器里依赖了B，然后它又会重新走getBean的这个流程，当在走到这里的时候，又发现依赖了A此时就会抛出异常。为什么会抛出异常，因为，走getBean的时候他会去从你的单例缓存池中去拿，因为你这里的Bean还没有被创建好。自然不会被放进缓存中，所以它是在缓存中拿不到B对象的。反过来也是拿不到A对象的。造成了死循环故此直接抛异常。这就是为什么Spring IOC不能解决构造器循环依赖的原因。因为你还没来的急放入缓存你的对象是不存在的。所以不能创建。同理@Bean标注的循环依赖方法也是不能解决的，跟这个同理。那么多例就更不能解决了。为什么？因为在走createBeanInstance的时候，会判断是否是单例的Bean定义信息mbd.isSingleton()；如果是才会进来。所以多例的Bean压根就不会走进来，而是走了另一段逻辑，这里不做介绍。至此，构造器循环依赖和@Bean的循环依赖还有多例Bean的循环依赖为什么不能解决已经解释清楚。然后如果说，Bean创建成功了。那么会走后面的逻辑。
+6. 将创建好的Bean放入缓存，addSingletonFactory方法就是将你创建好的Bean放入三级缓存中。并且移除早期暴露的对象。
+7. 通过populateBean给属性赋值，我们知道，创建好的对象，并不是一个完整的对象，里面的属性还没有被赋值。所以这个方法就是为创建好的Bean为它的属性赋值。并且调用了我们实现的的XXXAware接口进行回调初始化，。然后调用我们实现的Bean的后置处理器，给我们最后一次机会去修改Bean的属性。
+
+### Spring如何解决循环依赖问题
+
+Spring使用了三级缓存解决了循环依赖的问题。在populateBean()给属性赋值阶段里面Spring会解析你的属性，并且赋值，当发现，A对象里面依赖了B，此时又会走getBean方法，但这个时候，你去缓存中是可以拿的到的。因为我们在对createBeanInstance对象创建完成以后已经放入了缓存当中，所以创建B的时候发现依赖A，直接就从缓存中去拿，此时B创建完，A也创建完，一共执行了4次。至此Bean的创建完成，最后将创建好的Bean放入单例缓存池中。
+
+### BeanFactory和ApplicationContext的区别
+
+1. BeanFactory是Spring里面最低层的接口，提供了最简单的容器的功能，只提供了实例化对象和拿对象的功能。
+2. ApplicationContext应用上下文，继承BeanFactory接口，它是Spring的一各更高级的容器，提供了更多的有用的功能。如国际化，访问资源，载入多个（有继承关系）上下文 ，使得每一个上下文都专注于一个特定的层次，消息发送、响应机制，AOP等。
+3. BeanFactory在启动的时候不会去实例化Bean，中有从容器中拿Bean的时候才会去实例化。ApplicationContext在启动的时候就把所有的Bean全部实例化了。它还可以为Bean配置lazy-init=true来让Bean延迟实例化
+
+### 动态代理的实现方式，AOP的实现方式
+
+1. JDK动态代理：利用反射机制生成一个实现代理接口的匿名类，在调用具体方法前调用InvokeHandler来处理。
+2. CGlib动态代理：利用ASM（开源的Java字节码编辑库，操作字节码）开源包，将代理对象类的class文件加载进来，通过修改其字节码生成子类来处理。
+3. 区别：JDK代理只能对实现接口的类生成代理；CGlib是针对类实现代理，对指定的类生成一个子类，并覆盖其中的方法，这种通过继承类的实现方式，不能代理final修饰的类。
+
+### Spring的的事务传播机制
+
+1. REQUIRED（默认）：支持使用当前事务，如果当前事务不存在，创建一个新事务。
+2. SUPPORTS：支持使用当前事务，如果当前事务不存在，则不使用事务。
+3. MANDATORY：强制，支持使用当前事务，如果当前事务不存在，则抛出Exception。
+4. REQUIRES_NEW：创建一个新事务，如果当前事务存在，把当前事务挂起。
+5. NOT_SUPPORTED：无事务执行，如果当前事务存在，把当前事务挂起。
+6. NEVER：无事务执行，如果当前有事务则抛出Exception。
+7. NESTED：嵌套事务，如果当前事务存在，那么在嵌套的事务中执行。如果当前事务不存在，则表现跟REQUIRED一样。
+
+### Spring的后置处理器
+
+1. BeanPostProcessor：Bean的后置处理器，主要在bean初始化前后工作。
+2. InstantiationAwareBeanPostProcessor：继承于BeanPostProcessor，主要在实例化bean前后工作； AOP创建代理对象就是通过该接口实现。
+3. BeanFactoryPostProcessor：Bean工厂的后置处理器，在bean定义(bean definitions)加载完成后，bean尚未初始化前执行。
+4. BeanDefinitionRegistryPostProcessor：继承于BeanFactoryPostProcessor。其自定义的方法postProcessBeanDefinitionRegistry会在bean定义(bean definitions)将要加载，bean尚未初始化前真执行，即在BeanFactoryPostProcessor的postProcessBeanFactory方法前被调用。
+
 ## 消息队列
 
 ### 为什么需要消息队列
@@ -377,6 +449,19 @@ Kafka最初考虑的问题是，customer应该从brokes拉取消息还是brokers
 ### Dubbo注册中心挂了还可以继续通信么
 
 可以，因为刚开始初始化的时候，消费者会将提供者的地址等信息拉取到本地缓存，所以注册中心挂了可以继续通信。
+
+### Dubbo框架设计结构
+
+1. 服务接口层：该层是与实际业务逻辑相关的，根据服务提供方和服务消费方的业务设计对应的接口和实现。
+2. 配置层：对外配置接口，以ServiceConfig和ReferenceConfig为中心，可以直接new配置类，也可以通过spring解析配置生成配置类。
+3. 服务代理层：服务接口透明代理，生成服务的客户端Stub和服务器端Skeleton，以ServiceProxy为中心，扩展接口为ProxyFactory。
+4. 服务注册层：封装服务地址的注册与发现，以服务URL为中心，扩展接口为RegistryFactory、Registry和RegistryService。可能没有服务注册中心，此时服务提供方直接暴露服务。
+5. 集群层：封装多个提供者的路由及负载均衡，并桥接注册中心，以Invoker为中心，扩展接口为Cluster、Directory、Router和LoadBalance。将多个服务提供方组合为一个服务提供方，实现对服务消费方来透明，只需要与一个服务提供方进行交互。
+6. 监控层：RPC调用次数和调用时间监控，以Statistics为中心，扩展接口为MonitorFactory、Monitor和MonitorService。
+7. 远程调用层：封将RPC调用，以Invocation和Result为中心，扩展接口为Protocol、Invoker和Exporter。Protocol是服务域，它是Invoker暴露和引用的主功能入口，它负责Invoker的生命周期管理。Invoker是实体域，它是Dubbo的核心模型，其它模型都向它靠扰，或转换成它，它代表一个可执行体，可向它发起invoke调用，它有可能是一个本地的实现，也可能是一个远程的实现，也可能一个集群实现。
+8. 信息交换层：封装请求响应模式，同步转异步，以Request和Response为中心，扩展接口为Exchanger、ExchangeChannel、ExchangeClient和ExchangeServer。
+9. 网络传输层：抽象mina和netty为统一接口，以Message为中心，扩展接口为Channel、Transporter、Client、Server和Codec。
+10. 数据序列化层：可复用的一些工具，扩展接口为Serialization、 ObjectInput、ObjectOutput和ThreadPool。
 
 ## 计算机网路
 
