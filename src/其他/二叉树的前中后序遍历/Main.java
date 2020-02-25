@@ -1,4 +1,4 @@
-package 其他.二叉树的遍历;
+package 其他.二叉树的前中后序遍历;
 
 import java.util.Stack;
 

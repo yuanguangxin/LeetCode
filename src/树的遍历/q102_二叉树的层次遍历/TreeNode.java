@@ -1,4 +1,4 @@
-package 其他.二叉树的遍历;
+package 树的遍历.q102_二叉树的层次遍历;
 
 public class TreeNode {
     int val;
