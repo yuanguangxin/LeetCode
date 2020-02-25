@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="update Rocket.md">
-      <change afterPath="$PROJECT_DIR$/src/动态规划/q118_杨辉三角/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/数组操作/q73_矩阵置零/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/栈操作/q224_基本计算器/f1/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/栈操作/q224_基本计算器/f2/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/树的遍历/q102_二叉树的层次遍历/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/树的遍历/q102_二叉树的层次遍历/TreeNode.java" afterDir="false" />
+    <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/字符串操作/q736_划分字母区间/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +79,7 @@
       <recent name="$PROJECT_DIR$/src/q206/f1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Solution (2)">
+  <component name="RunManager" selected="Application.Solution (3)">
     <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hash相关.q1_两数之和.f1.Solution" />
       <module name="LeetCode" />
@@ -105,6 +99,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="双指针遍历.q121_买卖股票的最佳时机.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Solution (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="字符串操作.q736_划分字母区间.Solution" />
+      <module name="LeetCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="字符串操作.q736_划分字母区间.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -205,6 +212,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution (3)" />
         <item itemvalue="Application.Solution (2)" />
         <item itemvalue="Application.Solution (1)" />
         <item itemvalue="Application.Solution (2)" />
@@ -255,7 +263,7 @@
       <workItem from="1582007077483" duration="2054000" />
       <workItem from="1582286924766" duration="554000" />
       <workItem from="1582552791282" duration="3963000" />
-      <workItem from="1582634245000" duration="4081000" />
+      <workItem from="1582634245000" duration="4832000" />
     </task>
     <task id="LOCAL-00001" summary="add q5/q7/q172">
       <created>1580045439607</created>
@@ -495,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582020913236</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="add q73/q102/q118/q224">
+      <created>1582641766540</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1582641766540</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +586,8 @@
     <MESSAGE value="rename package" />
     <MESSAGE value="update README.md" />
     <MESSAGE value="update Rocket.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="update Rocket.md" />
+    <MESSAGE value="add q73/q102/q118/q224" />
+    <option name="LAST_COMMIT_MESSAGE" value="add q73/q102/q118/q224" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="115" key="#Inspections" timestamp="1581061018990">
@@ -586,34 +602,35 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1578548165321" />
-    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1582641231644">
+    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1582641765763">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1582641231644" />
-    <state x="144" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1581927787180">
-      <screen x="0" y="23" width="1440" height="797" />
+    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1582641765763" />
+    <state x="144" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1582641811567">
+      <screen x="0" y="23" width="1440" height="793" />
     </state>
     <state x="144" y="78" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1581927734404" />
+    <state x="144" y="78" width="1152" height="720" key="DiffContextDialog/0.23.1440.793@0.23.1440.793" timestamp="1582641811567" />
     <state x="144" y="78" width="1152" height="720" key="DiffContextDialog/0.23.1440.797@0.23.1440.797" timestamp="1581927787180" />
-    <state width="1398" height="177" key="GridCell.Tab.0.bottom" timestamp="1581957324691">
+    <state width="1398" height="177" key="GridCell.Tab.0.bottom" timestamp="1582642914304">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="177" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1581957324691" />
+    <state width="1398" height="177" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1582642914304" />
     <state width="1398" height="177" key="GridCell.Tab.0.bottom/0.23.1440.797@0.23.1440.797" timestamp="1581533895880" />
-    <state width="1398" height="177" key="GridCell.Tab.0.center" timestamp="1581957324690">
+    <state width="1398" height="177" key="GridCell.Tab.0.center" timestamp="1582642914303">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="177" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1581957324690" />
+    <state width="1398" height="177" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1582642914303" />
     <state width="1398" height="177" key="GridCell.Tab.0.center/0.23.1440.797@0.23.1440.797" timestamp="1581533895878" />
-    <state width="1398" height="177" key="GridCell.Tab.0.left" timestamp="1581957324690">
+    <state width="1398" height="177" key="GridCell.Tab.0.left" timestamp="1582642914302">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="177" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1581957324690" />
+    <state width="1398" height="177" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1582642914302" />
     <state width="1398" height="177" key="GridCell.Tab.0.left/0.23.1440.797@0.23.1440.797" timestamp="1581533895878" />
-    <state width="1398" height="177" key="GridCell.Tab.0.right" timestamp="1581957324691">
+    <state width="1398" height="177" key="GridCell.Tab.0.right" timestamp="1582642914304">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="177" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1581957324691" />
+    <state width="1398" height="177" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1582642914304" />
     <state width="1398" height="177" key="GridCell.Tab.0.right/0.23.1440.797@0.23.1440.797" timestamp="1581533895879" />
     <state width="1398" height="204" key="GridCell.Tab.1.bottom" timestamp="1581745235895">
       <screen x="0" y="0" width="1440" height="900" />
@@ -639,10 +656,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1581061096545" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1582020914413">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1582641768187">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1582020914413" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1582641768187" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581744794182">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
