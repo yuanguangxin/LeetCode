@@ -55,6 +55,7 @@ Redis 中数据过期策略采用定期删除+惰性删除策略
     6. 当内存不足以容纳新写入数据时，在设置了过期时间的键空间中，有更早过期时间的 Key 优先移除。
 
 ### Redis的LRU具体实现：
+
 传统的LRU是使用栈的形式，每次都将最新使用的移入栈顶，但是用栈的形式会导致执行select *的时候大量非热点数据占领头部数据，所以需要改进。Redis每次按key获取一个值的时候，都会更新value中的lru字段为当前秒级别的时间戳。Redis初始的实现算法很简单，随机从dict中取出五个key,淘汰一个lru字段值最小的。在3.0的时候，又改进了一版算法，首先第一次随机选取的key都会放入一个pool中(pool的大小为16),pool中的key是按lru大小顺序排列的。接下来每次随机选取的keylru值必须小于pool中最小的lru才会继续放入，直到将pool放满。放满之后，每次如果有新的key需要放入，需要将pool中lru最大的一个key取出。淘汰的时候，直接从pool中选取一个lru最小的值然后将其淘汰。
 
 ### 如何解决 Redis 缓存雪崩问题
@@ -344,7 +345,7 @@ AQS内部有3个对象，一个是state（用于计数器，类似gc的回收计
 1. 减少创建和销毁线程的次数，每个工作线程都可以被重复利用，可执行多个任务。
 2. 可以根据系统的承受能力，调整线程池中工作线程的数目，放置因为消耗过多的内存，而把服务器累趴下
 
-### 核心线程池ThreadPoolExecutor内部实现
+### 核心线程池ThreadPoolExecutor内部参数
 
 1. corePoolSize：指定了线程池中的线程数量
 2. maximumPoolSize：指定了线程池中的最大线程数量
@@ -354,11 +355,24 @@ AQS内部有3个对象，一个是state（用于计数器，类似gc的回收计
 6. threadFactory：线程工厂，用于创建线程，一般用默认的即可。
 7. handler：拒绝策略。当任务太多来不及处理，如何拒绝任务。
 
+### 线程池的拒绝策略
+
+1. ThreadPoolExecutor.AbortPolicy:丢弃任务并抛出RejectedExecutionException异常。
+2. ThreadPoolExecutor.DiscardPolicy：丢弃任务，但是不抛出异常。
+3. ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新提交被拒绝的任务
+4. ThreadPoolExecutor.CallerRunsPolicy：由调用线程（提交任务的线程）处理该任务
+
 ### 线程池的线程数量怎么确定
 
 1. 一般来说，如果是CPU密集型应用，则线程池大小设置为N+1。
 2. 一般来说，如果是IO密集型应用，则线程池大小设置为2N+1。
 3. 在IO优化中，线程等待时间所占比例越高，需要越多线程，线程CPU时间所占比例越高，需要越少线程。这样的估算公式可能更适合：最佳线程数目 = （（线程等待时间+线程CPU时间）/线程CPU时间 ）* CPU数目
+
+### ThreadLocal的原理和实现
+
+ThreadLoal 变量，线程局部变量，同一个 ThreadLocal 所包含的对象，在不同的 Thread 中有不同的副本。ThreadLocal 变量通常被private static修饰。当一个线程结束时，它所使用的所有 ThreadLocal 相对的实例副本都可被回收。
+
+一个线程内可以存在多个 ThreadLocal 对象，所以其实是 ThreadLocal 内部维护了一个 Map ，这个 Map 不是直接使用的 HashMap ，而是 ThreadLocal 实现的一个叫做 ThreadLocalMap 的静态内部类。而我们使用的 get()、set() 方法其实都是调用了这个ThreadLocalMap类对应的 get()、set() 方法。
 
 ### HashSet和HashMap
 
@@ -424,6 +438,10 @@ Spring使用了三级缓存解决了循环依赖的问题。在populateBean()给
 ### 为什么需要消息队列
 
 解耦，异步处理，削峰/限流
+
+### Kafka的文件存储机制
+
+Kafka中消息是以topic进行分类的，生产者通过topic向Kafka broker发送消息，消费者通过topic读取数据。然而topic在物理层面又能以partition为分组，一个topic可以分成若干个partition。partition还可以细分为segment，一个partition物理上由多个segment组成，segment文件由两部分组成，分别为“.index”文件和“.log”文件，分别表示为segment索引文件和数据文件。这两个文件的命令规则为：partition全局的第一个segment从0开始，后续每个segment文件名为上一个segment文件最后一条消息的offset值。
 
 ### Kafka 如何保证可靠性
 
