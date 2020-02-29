@@ -678,14 +678,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1578548165321" />
-    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1582971870029">
+    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1582971922399">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1582971870029" />
-    <state x="144" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1582900981690">
+    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1582971922399" />
+    <state x="144" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1582971909377">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="144" y="78" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1582900981690" />
+    <state x="144" y="78" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1582971909377" />
     <state x="144" y="78" width="1152" height="720" key="DiffContextDialog/0.23.1440.793@0.23.1440.793" timestamp="1582714686712" />
     <state x="144" y="78" width="1152" height="720" key="DiffContextDialog/0.23.1440.797@0.23.1440.797" timestamp="1581927787180" />
     <state width="1398" height="236" key="GridCell.Tab.0.bottom" timestamp="1582724240264">
@@ -728,14 +728,18 @@
     </state>
     <state width="1398" height="204" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1581745235894" />
     <state width="1398" height="304" key="GridCell.Tab.1.right/0.23.1440.797@0.23.1440.797" timestamp="1580408030266" />
+    <state x="431" y="173" key="MultipleFileMergeDialog" timestamp="1582971939233">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="431" y="173" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1582971939233" />
     <state x="221" y="63" key="SettingsEditor" timestamp="1582961080628">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1582961080628" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1582962310837">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1582971924121">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1582962310837" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1582971924121" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581744794182">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
