@@ -1,4 +1,4 @@
-package 栈操作.q20_有效的括号;
+package 栈相关.q20_有效的括号;
 
 import java.util.Stack;
 

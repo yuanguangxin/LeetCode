@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/区间合并/q56_合并区间/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/堆相关/q215_数组中的第K个最大元素/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/堆相关/q347_前K个高频元素/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rocket.md" beforeDir="false" afterPath="$PROJECT_DIR$/Rocket.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/栈操作/q20_有效的括号/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/栈相关/q20_有效的括号/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/栈操作/q224_基本计算器/f1/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/栈相关/q224_基本计算器/f1/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/栈操作/q224_基本计算器/f2/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/栈相关/q224_基本计算器/f2/Solution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +282,7 @@
       <workItem from="1582286924766" duration="554000" />
       <workItem from="1582552791282" duration="3963000" />
       <workItem from="1582634245000" duration="13006000" />
-      <workItem from="1582873496305" duration="7292000" />
+      <workItem from="1582873496305" duration="9953000" />
     </task>
     <task id="LOCAL-00001" summary="add q5/q7/q172">
       <created>1580045439607</created>
@@ -575,7 +578,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582901003378</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="add q56">
+      <created>1582962309100</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1582962309100</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,7 +638,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add q26/q43" />
     <MESSAGE value="add q46" />
     <MESSAGE value="add q53" />
     <MESSAGE value="add q54" />
@@ -653,7 +662,8 @@
     <MESSAGE value="更新分类目录" />
     <MESSAGE value="面试题目更新" />
     <MESSAGE value="add q138" />
-    <option name="LAST_COMMIT_MESSAGE" value="add q138" />
+    <MESSAGE value="add q56" />
+    <option name="LAST_COMMIT_MESSAGE" value="add q56" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="115" key="#Inspections" timestamp="1581061018990">
@@ -668,10 +678,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1578548165321" />
-    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1582901003112">
+    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1582971870029">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1582901003112" />
+    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1582971870029" />
     <state x="144" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1582900981690">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -722,18 +732,26 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1582961080628" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1582901004760">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1582962310837">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1582901004760" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1582962310837" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581744794182">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.797@0.23.1440.797" timestamp="1581744794182" />
+    <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582971858761">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1582971858761" />
     <state x="378" y="207" width="683" height="486" key="find.popup" timestamp="1582564254151">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="378" y="207" width="683" height="486" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1582564254151" />
+    <state x="398" y="248" key="git4idea.merge.GitPullDialog" timestamp="1582971880352">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="398" y="248" key="git4idea.merge.GitPullDialog/0.0.1440.900@0.0.1440.900" timestamp="1582971880352" />
     <state x="385" y="210" key="run.anything.popup" timestamp="1581652493432">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
