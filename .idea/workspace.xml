@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/快慢指针遍历/q876_链表的中间结点/ListNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/快慢指针遍历/q876_链表的中间结点/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,11 +68,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="快慢指针遍历.q876_链表的中间结点" />
       <recent name="递归.q226_翻转二叉树" />
       <recent name="链表操作.q138_复制带随机指针的链表.f2" />
       <recent name="链表操作.q138_复制带随机指针的链表.f1" />
       <recent name="hash相关.q141_环形链表.f2" />
-      <recent name="hash相关.q141_环形链表.f1" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/hash相关" />
@@ -283,13 +286,8 @@
       <workItem from="1583849488567" duration="869000" />
       <workItem from="1583927904095" duration="1482000" />
       <workItem from="1584281287922" duration="2464000" />
-    </task>
-    <task id="LOCAL-00001" summary="add q5/q7/q172">
-      <created>1580045439607</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1580045439608</updated>
+      <workItem from="1584416544436" duration="218000" />
+      <workItem from="1584977075044" duration="499000" />
     </task>
     <task id="LOCAL-00002" summary="add q9">
       <created>1580057171456</created>
@@ -627,7 +625,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584289863273</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="update Rocket.md">
+      <created>1584416595529</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1584416595529</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -691,7 +696,6 @@
     <MESSAGE value="update q206" />
     <MESSAGE value="rename package" />
     <MESSAGE value="update README.md" />
-    <MESSAGE value="update Rocket.md" />
     <MESSAGE value="add q73/q102/q118/q224" />
     <MESSAGE value="add q736" />
     <MESSAGE value="增加操作系统相关问题" />
@@ -705,7 +709,8 @@
     <MESSAGE value="add q316" />
     <MESSAGE value="add q226" />
     <MESSAGE value="add q300" />
-    <option name="LAST_COMMIT_MESSAGE" value="add q300" />
+    <MESSAGE value="update Rocket.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update Rocket.md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="115" key="#Inspections" timestamp="1581061018990">
@@ -720,14 +725,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1578548165321" />
-    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1584289862834">
+    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1584416594945">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1584289862834" />
-    <state x="144" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1582971909377">
+    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1584416594945" />
+    <state x="144" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1584416581041">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="144" y="78" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1582971909377" />
+    <state x="144" y="78" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1584416581041" />
     <state x="144" y="78" width="1152" height="720" key="DiffContextDialog/0.23.1440.793@0.23.1440.793" timestamp="1582714686712" />
     <state x="144" y="78" width="1152" height="720" key="DiffContextDialog/0.23.1440.797@0.23.1440.797" timestamp="1581927787180" />
     <state width="1398" height="236" key="GridCell.Tab.0.bottom" timestamp="1583494105225">
@@ -778,10 +783,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583244442349" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1584289864769">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1584416597708">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1584289864769" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1584416597708" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581744794182">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
