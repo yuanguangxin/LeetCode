@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/快慢指针遍历/q876_链表的中间结点/ListNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/快慢指针遍历/q876_链表的中间结点/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/数组操作/q945_使数组唯一的最小增量/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -288,13 +287,8 @@
       <workItem from="1584281287922" duration="2464000" />
       <workItem from="1584416544436" duration="218000" />
       <workItem from="1584977075044" duration="499000" />
-    </task>
-    <task id="LOCAL-00002" summary="add q9">
-      <created>1580057171456</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1580057171456</updated>
+      <workItem from="1585037684584" duration="753000" />
+      <workItem from="1585041029099" duration="497000" />
     </task>
     <task id="LOCAL-00003" summary="add  q3/q8/q11">
       <created>1580235186067</created>
@@ -632,7 +626,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584416595529</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="update Rocket.md">
+      <created>1585027889054</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1585027889055</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -725,10 +726,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1578548165321" />
-    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1585027872681">
+    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1585027888852">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585027872681" />
+    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585027888852" />
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1585027870766">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -783,10 +784,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583244442349" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1584416597708">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1585027890325">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1584416597708" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585027890325" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581744794182">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
@@ -795,6 +796,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1582971858761" />
+    <state x="100" y="100" width="1240" height="700" key="dock-window-1" timestamp="1585037767258">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="dock-window-1/0.23.1440.797@0.23.1440.797" timestamp="1585037767258" />
     <state x="378" y="207" width="683" height="486" key="find.popup" timestamp="1582564254151">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
