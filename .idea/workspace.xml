@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/链表操作/q61_旋转链表/ListNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/链表操作/q61_旋转链表/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,14 +262,7 @@
       <workItem from="1585037684584" duration="753000" />
       <workItem from="1585041029099" duration="2193000" />
       <workItem from="1585219892120" duration="917000" />
-      <workItem from="1585223904505" duration="7051000" />
-    </task>
-    <task id="LOCAL-00010" summary="add q54">
-      <created>1580753759299</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1580753759299</updated>
+      <workItem from="1585223904505" duration="7487000" />
     </task>
     <task id="LOCAL-00011" summary="add q23/q101">
       <created>1580965798400</created>
@@ -610,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585232616596</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="add q61">
+      <created>1585234195148</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1585234195148</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -663,7 +660,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update q10" />
     <MESSAGE value="update q206" />
     <MESSAGE value="rename package" />
     <MESSAGE value="update README.md" />
@@ -688,7 +684,8 @@
     <MESSAGE value="add q34" />
     <MESSAGE value="add q64" />
     <MESSAGE value="add q155" />
-    <option name="LAST_COMMIT_MESSAGE" value="add q155" />
+    <MESSAGE value="add q61" />
+    <option name="LAST_COMMIT_MESSAGE" value="add q61" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="115" key="#Inspections" timestamp="1581061018990">
@@ -703,10 +700,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1578548165321" />
-    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1585232616430">
+    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1585234195004">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585232616430" />
+    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585234195004" />
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1585232660808">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
@@ -761,10 +758,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1585223890241" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1585232618177">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1585234196784">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585232618177" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585234196784" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581744794182">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
