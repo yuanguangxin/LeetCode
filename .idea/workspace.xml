@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/动态规划/q70_爬楼梯/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/递归/q104_二叉树的最大深度/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/递归/q104_二叉树的最大深度/TreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/链表操作/q19_删除链表的倒数第N个节点/ListNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/链表操作/q19_删除链表的倒数第N个节点/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -69,11 +68,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="链表操作.q19_删除链表的倒数第N个节点" />
       <recent name="递归.q104_二叉树的最大深度" />
       <recent name="快慢指针遍历.q876_链表的中间结点" />
       <recent name="递归.q226_翻转二叉树" />
       <recent name="链表操作.q138_复制带随机指针的链表.f2" />
-      <recent name="链表操作.q138_复制带随机指针的链表.f1" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/hash相关" />
@@ -290,14 +289,8 @@
       <workItem from="1584416544436" duration="218000" />
       <workItem from="1584977075044" duration="499000" />
       <workItem from="1585037684584" duration="753000" />
-      <workItem from="1585041029099" duration="1877000" />
-    </task>
-    <task id="LOCAL-00004" summary="add q6">
-      <created>1580320003660</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1580320003660</updated>
+      <workItem from="1585041029099" duration="2193000" />
+      <workItem from="1585219892120" duration="222000" />
     </task>
     <task id="LOCAL-00005" summary="add q14/q16/q20">
       <created>1580395653122</created>
@@ -635,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585041706193</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="add q70/q104">
+      <created>1585108622120</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1585108622120</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -688,7 +688,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update q98" />
     <MESSAGE value="add q110/q450/q701" />
     <MESSAGE value="add q1277" />
     <MESSAGE value="add q42" />
@@ -713,7 +712,8 @@
     <MESSAGE value="add q300" />
     <MESSAGE value="update Rocket.md" />
     <MESSAGE value="add q945" />
-    <option name="LAST_COMMIT_MESSAGE" value="add q945" />
+    <MESSAGE value="add q70/q104" />
+    <option name="LAST_COMMIT_MESSAGE" value="add q70/q104" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="115" key="#Inspections" timestamp="1581061018990">
@@ -728,10 +728,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1578548165321" />
-    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1585108601733">
+    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1585108621969">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585108601733" />
+    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585108621969" />
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1585027870766">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -786,10 +786,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1583244442349" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1585041707972">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1585108623353">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585041707972" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585108623353" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581744794182">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
