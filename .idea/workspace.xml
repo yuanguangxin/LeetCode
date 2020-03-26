@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/动态规划/q64_最小路径和/Solution.java" afterDir="false" />
+    <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="add q64">
+      <change afterPath="$PROJECT_DIR$/src/栈相关/q155_最小栈/MinStack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -80,13 +80,13 @@
       <recent name="$PROJECT_DIR$/src/q206/f1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Solution (1)">
-    <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="分治法.q34_在排序数组中查找元素的第一个和最后一个位置.Solution" />
+  <component name="RunManager" selected="Application.MinStack">
+    <configuration name="MinStack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="栈相关.q155_最小栈.MinStack" />
       <module name="LeetCode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="分治法.q34_在排序数组中查找元素的第一个和最后一个位置.*" />
+          <option name="PATTERN" value="栈相关.q155_最小栈.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,12 +94,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="字符串操作.q736_划分字母区间.Solution" />
+    <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="分治法.q34_在排序数组中查找元素的第一个和最后一个位置.Solution" />
       <module name="LeetCode" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="字符串操作.q736_划分字母区间.*" />
+          <option name="PATTERN" value="分治法.q34_在排序数组中查找元素的第一个和最后一个位置.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -200,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MinStack" />
         <item itemvalue="Application.Solution (1)" />
         <item itemvalue="Application.Solution (6)" />
         <item itemvalue="Application.Solution (5)" />
         <item itemvalue="Application.Solution (4)" />
-        <item itemvalue="Application.Solution (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -264,14 +264,7 @@
       <workItem from="1585037684584" duration="753000" />
       <workItem from="1585041029099" duration="2193000" />
       <workItem from="1585219892120" duration="917000" />
-      <workItem from="1585223904505" duration="5628000" />
-    </task>
-    <task id="LOCAL-00008" summary="add q46">
-      <created>1580585083883</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1580585083883</updated>
+      <workItem from="1585223904505" duration="6502000" />
     </task>
     <task id="LOCAL-00009" summary="add q53">
       <created>1580714190854</created>
@@ -609,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585230484320</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="add q64">
+      <created>1585230789181</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1585230789181</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -662,7 +662,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update md" />
     <MESSAGE value="update q10/q746" />
     <MESSAGE value="update q10" />
     <MESSAGE value="update q206" />
@@ -687,7 +686,8 @@
     <MESSAGE value="add q19" />
     <MESSAGE value="add q32" />
     <MESSAGE value="add q34" />
-    <option name="LAST_COMMIT_MESSAGE" value="add q34" />
+    <MESSAGE value="add q64" />
+    <option name="LAST_COMMIT_MESSAGE" value="add q64" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="115" key="#Inspections" timestamp="1581061018990">
@@ -702,35 +702,35 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1578548165321" />
-    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1585230484170">
+    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1585232569278">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585230484170" />
+    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585232569278" />
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1585027870766">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1585027870766" />
     <state x="144" y="78" width="1152" height="720" key="DiffContextDialog/0.23.1440.793@0.23.1440.793" timestamp="1582714686712" />
     <state x="144" y="78" width="1152" height="720" key="DiffContextDialog/0.23.1440.797@0.23.1440.797" timestamp="1581927787180" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1585229512716">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1585231993155">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1585229512716" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1585231993155" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.797@0.23.1440.797" timestamp="1585228590486" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1585229512714">
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1585231993154">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1585229512714" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1585231993154" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.797@0.23.1440.797" timestamp="1585228590484" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1585229512714">
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1585231993154">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1585229512714" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1585231993154" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.797@0.23.1440.797" timestamp="1585228590483" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1585229512715">
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1585231993155">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1585229512715" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1585231993155" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.797@0.23.1440.797" timestamp="1585228590484" />
     <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1585228962390">
       <screen x="0" y="0" width="1440" height="900" />
@@ -760,10 +760,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1585223890241" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1585230485339">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1585230790365">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585230485339" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585230790365" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581744794182">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
