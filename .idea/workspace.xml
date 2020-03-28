@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/动态规划/q62_不同路径/Solution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,6 +265,7 @@
       <workItem from="1585041029099" duration="2193000" />
       <workItem from="1585219892120" duration="917000" />
       <workItem from="1585223904505" duration="7719000" />
+      <workItem from="1585376676883" duration="530000" />
     </task>
     <task id="LOCAL-00011" summary="add q23/q101">
       <created>1580965798400</created>
