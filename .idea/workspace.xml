@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="add q61">
-      <change afterPath="$PROJECT_DIR$/jvm.md" afterDir="false" />
+    <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="新增JVM性能监控/调优相关">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rocket.md" beforeDir="false" afterPath="$PROJECT_DIR$/Rocket.md" afterDir="false" />
     </list>
@@ -267,14 +266,7 @@
       <workItem from="1585219892120" duration="917000" />
       <workItem from="1585223904505" duration="7719000" />
       <workItem from="1585376676883" duration="530000" />
-      <workItem from="1585657110826" duration="357000" />
-    </task>
-    <task id="LOCAL-00011" summary="add q23/q101">
-      <created>1580965798400</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1580965798400</updated>
+      <workItem from="1585657110826" duration="888000" />
     </task>
     <task id="LOCAL-00012" summary="add q94/98/144/145">
       <created>1581102125245</created>
@@ -612,7 +604,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585234195148</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="新增JVM性能监控/调优相关">
+      <created>1585657673868</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1585657673869</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,7 +664,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update q206" />
     <MESSAGE value="rename package" />
     <MESSAGE value="update README.md" />
     <MESSAGE value="add q73/q102/q118/q224" />
@@ -690,7 +688,8 @@
     <MESSAGE value="add q64" />
     <MESSAGE value="add q155" />
     <MESSAGE value="add q61" />
-    <option name="LAST_COMMIT_MESSAGE" value="add q61" />
+    <MESSAGE value="新增JVM性能监控/调优相关" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增JVM性能监控/调优相关" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="115" key="#Inspections" timestamp="1581061018990">
@@ -705,14 +704,14 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1578548165321" />
-    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1585657640084">
+    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1585657778436">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585657640084" />
-    <state x="143" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1585232660808">
-      <screen x="0" y="23" width="1440" height="797" />
+    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585657778436" />
+    <state x="143" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1585657797990">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="143" y="78" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1585232656095" />
+    <state x="143" y="78" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1585657797990" />
     <state x="144" y="78" width="1152" height="720" key="DiffContextDialog/0.23.1440.793@0.23.1440.793" timestamp="1582714686712" />
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog/0.23.1440.797@0.23.1440.797" timestamp="1585232660808" />
     <state width="1398" height="303" key="GridCell.Tab.0.bottom" timestamp="1585235047508">
@@ -767,18 +766,18 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="474" y="173" key="VCS.ChangeListViewerDialog/0.0.1440.900@0.0.1440.900" timestamp="1585577172815" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1585235022890">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1585657828369">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585235022890" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585657828369" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581744794182">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.23.1440.797@0.23.1440.797" timestamp="1581744794182" />
-    <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585577179368">
+    <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585657710391">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1585577179368" />
+    <state x="503" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1585657710391" />
     <state x="100" y="100" width="1240" height="700" key="dock-window-1" timestamp="1585037767258">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
