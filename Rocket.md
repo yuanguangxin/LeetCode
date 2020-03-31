@@ -305,6 +305,7 @@ HotSpot JVM把年轻代分为了三部分：1个Eden区和2个Survivor区（分�
 ### JVM性能监控
 
 1. JDK的命令行工具
+
     * jps(虚拟机进程状况工具)：jps可以列出正在运行的虚拟机进程，并显示虚拟机执行主类(Main Class,main()函数所在的类)名称 以及这些进程的本地虚拟机唯一ID(Local Virtual Machine Identifier,LVMID)。
     * jstat(虚拟机统计信息监视工具)：jstat是用于监视虚拟机各种运行状态信息的命令行工 具。它可以显示本地或者远程虚拟机进程中的类装载、内存、垃圾收集、JIT编译等运行数据。
     * jinfo(Java配置信息工具)：jinfo的作用是实时地查看和调整虚拟机各项参数。
