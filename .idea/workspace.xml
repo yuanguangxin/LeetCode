@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="增加问题">
-      <change afterPath="$PROJECT_DIR$/src/contest/q1/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/contest/q2/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/contest/q4/Solution.java" afterDir="false" />
+    <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rocket.md" beforeDir="false" afterPath="$PROJECT_DIR$/Rocket.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +56,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/hash相关" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -262,21 +258,7 @@
       <workItem from="1586846888542" duration="1313000" />
       <workItem from="1587193343846" duration="24885000" />
       <workItem from="1587225096292" duration="132000" />
-      <workItem from="1588302756697" duration="3439000" />
-    </task>
-    <task id="LOCAL-00013" summary="update q98">
-      <created>1581156795852</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1581156795852</updated>
-    </task>
-    <task id="LOCAL-00014" summary="add q110/q450/q701">
-      <created>1581270301073</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1581270301073</updated>
+      <workItem from="1588302756697" duration="3701000" />
     </task>
     <task id="LOCAL-00015" summary="add q1277">
       <created>1581441609925</created>
@@ -607,7 +589,21 @@
       <option name="project" value="LOCAL" />
       <updated>1586355292587</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="增加问题">
+      <created>1588336179207</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1588336179207</updated>
+    </task>
+    <task id="LOCAL-00063" summary="增加问题">
+      <created>1588336234219</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1588336234219</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -700,10 +696,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1587221348872" />
-    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1588336179045">
+    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1588336234072">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1588336179045" />
+    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1588336234072" />
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1588336167223">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -758,10 +754,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1585223890241" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1588336180679">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1588336235490">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1588336180679" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1588336235490" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581744794182">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
