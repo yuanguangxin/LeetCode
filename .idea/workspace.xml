@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rocket.md" beforeDir="false" afterPath="$PROJECT_DIR$/Rocket.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,23 +53,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="$PROJECT_DIR$/.idea" />
-      </set>
-    </option>
-  </component>
   <component name="ProjectId" id="1VejAt63XWcMUQr7gJbMHyEoS6Q" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -194,18 +206,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -267,7 +267,15 @@
       <workItem from="1591451838662" duration="723000" />
       <workItem from="1591524368167" duration="184000" />
       <workItem from="1591587079718" duration="3483000" />
-      <workItem from="1591599367868" duration="2330000" />
+      <workItem from="1591599367868" duration="2080000" />
+      <workItem from="1591713471095" duration="2784000" />
+    </task>
+    <task id="LOCAL-00022" summary="update Rocket.md">
+      <created>1581855774959</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1581855774959</updated>
     </task>
     <task id="LOCAL-00023" summary="update Rocket.md">
       <created>1581857522107</created>
@@ -605,18 +613,11 @@
       <option name="project" value="LOCAL" />
       <updated>1591633493323</updated>
     </task>
-    <task id="LOCAL-00071" summary="update">
-      <created>1591635584257</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1591635584257</updated>
-    </task>
-    <option name="localTasksCounter" value="72" />
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -656,13 +657,19 @@
             </State>
           </value>
         </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
       </map>
     </option>
-    <option name="OPEN_TABS">
-      <set>
-        <option value="1" />
-      </set>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add q736" />
@@ -697,16 +704,16 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1587221348872" />
-    <state x="404" y="60" key="CommitChangelistDialog2" timestamp="1591635584127">
+    <state x="404" y="60" key="CommitChangelistDialog2" timestamp="1591633493160">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1588749779133" />
-    <state x="404" y="60" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1591635584127" />
-    <state x="191" y="94" width="1152" height="720" key="DiffContextDialog" timestamp="1591808975210">
+    <state x="404" y="60" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1591633493160" />
+    <state x="191" y="94" width="1152" height="720" key="DiffContextDialog" timestamp="1591262490778">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1588749770793" />
-    <state x="191" y="94" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1591808975210" />
+    <state x="191" y="94" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1591262490778" />
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog/0.23.1440.797@0.23.1440.797" timestamp="1588303139733" />
     <state width="1878" height="380" key="GridCell.Tab.0.bottom" timestamp="1591595634376">
       <screen x="0" y="0" width="1920" height="1080" />
@@ -768,11 +775,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1585223890241" />
-    <state x="427" y="228" key="Vcs.Push.Dialog.v2" timestamp="1591635585311">
+    <state x="427" y="228" key="Vcs.Push.Dialog.v2" timestamp="1591633495184">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1588749781144" />
-    <state x="427" y="228" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1591635585311" />
+    <state x="427" y="228" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1591633495184" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587219014962">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
@@ -790,10 +797,6 @@
     </state>
     <state x="378" y="207" width="683" height="486" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586846937826" />
     <state x="504" y="248" width="911" height="584" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1591635370753" />
-    <state x="638" y="338" key="git4idea.merge.GitPullDialog" timestamp="1591808951868">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="638" y="338" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1591808951868" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1587219643331">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
