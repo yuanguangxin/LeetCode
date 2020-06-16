@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="">
+    <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rocket.md" beforeDir="false" afterPath="$PROJECT_DIR$/Rocket.md" afterDir="false" />
     </list>
@@ -97,23 +97,10 @@
       <recent name="$PROJECT_DIR$/src/q206/f1" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Solution">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="LeetCode" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="contest.test.Solution" />
-      <module name="LeetCode" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="contest.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -196,13 +183,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="其他.Test" />
+      <module name="LeetCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="其他.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.Solution" />
         <item itemvalue="Application.Solution (2)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Solution (3)" />
-        <item itemvalue="Application.Solution (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -268,14 +268,10 @@
       <workItem from="1591524368167" duration="184000" />
       <workItem from="1591587079718" duration="3483000" />
       <workItem from="1591599367868" duration="2080000" />
-      <workItem from="1591713471095" duration="2784000" />
-    </task>
-    <task id="LOCAL-00022" summary="update Rocket.md">
-      <created>1581855774959</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1581855774959</updated>
+      <workItem from="1591713471095" duration="2944000" />
+      <workItem from="1591758584495" duration="3000" />
+      <workItem from="1592230200964" duration="1933000" />
+      <workItem from="1592291352584" duration="6590000" />
     </task>
     <task id="LOCAL-00023" summary="update Rocket.md">
       <created>1581857522107</created>
@@ -613,7 +609,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591633493323</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="update">
+      <created>1591717167747</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1591717167748</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -715,32 +718,36 @@
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1588749770793" />
     <state x="191" y="94" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1591262490778" />
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog/0.23.1440.797@0.23.1440.797" timestamp="1588303139733" />
-    <state width="1878" height="380" key="GridCell.Tab.0.bottom" timestamp="1591595634376">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="2151" height="333" key="GridCell.Tab.0.bottom" timestamp="1592301525961">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state width="1398" height="204" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1587225087588" />
     <state width="1878" height="380" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1591595634376" />
+    <state width="2151" height="333" key="GridCell.Tab.0.bottom/0.0.2194.1194@0.0.2194.1194" timestamp="1592301525961" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.797@0.23.1440.797" timestamp="1587203529573" />
     <state width="1878" height="359" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1591364244398" />
-    <state width="1878" height="380" key="GridCell.Tab.0.center" timestamp="1591595634219">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="2151" height="333" key="GridCell.Tab.0.center" timestamp="1592301525961">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state width="1398" height="204" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1587225087587" />
     <state width="1878" height="380" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1591595634219" />
+    <state width="2151" height="333" key="GridCell.Tab.0.center/0.0.2194.1194@0.0.2194.1194" timestamp="1592301525961" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.797@0.23.1440.797" timestamp="1587203529571" />
     <state width="1878" height="359" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1591364244398" />
-    <state width="1878" height="380" key="GridCell.Tab.0.left" timestamp="1591595634218">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="2151" height="333" key="GridCell.Tab.0.left" timestamp="1592301525961">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state width="1398" height="204" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1587225087586" />
     <state width="1878" height="380" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1591595634218" />
+    <state width="2151" height="333" key="GridCell.Tab.0.left/0.0.2194.1194@0.0.2194.1194" timestamp="1592301525961" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.797@0.23.1440.797" timestamp="1587203529570" />
     <state width="1878" height="359" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1591364244397" />
-    <state width="1878" height="380" key="GridCell.Tab.0.right" timestamp="1591595634375">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="2151" height="333" key="GridCell.Tab.0.right" timestamp="1592301525961">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state width="1398" height="204" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1587225087587" />
     <state width="1878" height="380" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1591595634375" />
+    <state width="2151" height="333" key="GridCell.Tab.0.right/0.0.2194.1194@0.0.2194.1194" timestamp="1592301525961" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.797@0.23.1440.797" timestamp="1587203529572" />
     <state width="1878" height="359" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1591364244398" />
     <state width="1878" height="359" key="GridCell.Tab.1.bottom" timestamp="1591364244400">
@@ -775,11 +782,12 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1585223890241" />
-    <state x="427" y="228" key="Vcs.Push.Dialog.v2" timestamp="1591633495184">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="488" y="252" key="Vcs.Push.Dialog.v2" timestamp="1591717170083">
+      <screen x="0" y="0" width="2194" height="1194" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1588749781144" />
     <state x="427" y="228" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1591633495184" />
+    <state x="488" y="252" key="Vcs.Push.Dialog.v2/0.0.2194.1194@0.0.2194.1194" timestamp="1591717170083" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587219014962">
       <screen x="0" y="23" width="1440" height="797" />
     </state>
