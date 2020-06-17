@@ -19,13 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="update">
+    <list default="true" id="af7ffdf2-4ddc-4ed6-8222-60ed5acbc2ed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -51,6 +55,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1VejAt63XWcMUQr7gJbMHyEoS6Q" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -619,7 +626,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -702,10 +709,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1587221348872" />
-    <state x="404" y="60" key="CommitChangelistDialog2" timestamp="1591633493160">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1592388288495">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1588749779133" />
+    <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1592388288495" />
     <state x="404" y="60" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1591633493160" />
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1592386883631">
       <screen x="0" y="0" width="1440" height="900" />
@@ -800,10 +807,10 @@
     </state>
     <state x="378" y="207" width="683" height="486" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586846937826" />
     <state x="504" y="248" width="911" height="584" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1591635370753" />
-    <state x="479" y="282" key="git4idea.merge.GitPullDialog" timestamp="1592386874207">
+    <state x="479" y="282" key="git4idea.merge.GitPullDialog" timestamp="1592386920559">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="479" y="282" key="git4idea.merge.GitPullDialog/0.0.1440.900@0.0.1440.900" timestamp="1592386874207" />
+    <state x="479" y="282" key="git4idea.merge.GitPullDialog/0.0.1440.900@0.0.1440.900" timestamp="1592386920559" />
     <state x="638" y="338" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1591809009592" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1587219643331">
       <screen x="0" y="0" width="1440" height="900" />
