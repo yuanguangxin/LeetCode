@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ch.raffael.mddoclet.integrations.idea.MarkdownDocletIdea.ProjectConfiguration">
-    <option name="enabled" value="false" />
-    <option name="renderingOptions">
-      <RenderingOptions />
-    </option>
-  </component>
-</project>
