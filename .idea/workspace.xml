@@ -711,16 +711,16 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1587221348872" />
-    <state x="303" y="50" key="CommitChangelistDialog2" timestamp="1592388297859">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="404" y="60" key="CommitChangelistDialog2" timestamp="1592881788428">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1592388297859" />
-    <state x="404" y="60" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1591633493160" />
-    <state x="143" y="78" width="1152" height="720" key="DiffContextDialog" timestamp="1592386883631">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="404" y="60" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1592881788428" />
+    <state x="191" y="94" width="1152" height="720" key="DiffContextDialog" timestamp="1592881784892">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1592386883631" />
-    <state x="191" y="94" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1591262490778" />
+    <state x="191" y="94" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592881784892" />
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog/0.23.1440.797@0.23.1440.797" timestamp="1588303139733" />
     <state width="2151" height="333" key="GridCell.Tab.0.bottom" timestamp="1592301525961">
       <screen x="0" y="0" width="2194" height="1194" />
@@ -778,19 +778,20 @@
     <state width="1398" height="204" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1587225087589" />
     <state width="1878" height="359" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1591355457120" />
     <state width="1878" height="359" key="GridCell.Tab.1.right/0.23.1920.977@0.23.1920.977" timestamp="1591364244399" />
-    <state x="431" y="173" key="MultipleFileMergeDialog" timestamp="1588302773046">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="575" y="208" key="MultipleFileMergeDialog" timestamp="1592881800291">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="431" y="173" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1588302773046" />
+    <state x="575" y="208" key="MultipleFileMergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592881800291" />
     <state x="221" y="63" key="SettingsEditor" timestamp="1585223890241">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1585223890241" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1592388299499">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="427" y="228" key="Vcs.Push.Dialog.v2" timestamp="1592881789982">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1592388299499" />
-    <state x="427" y="228" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1591633495184" />
+    <state x="427" y="228" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1592881789982" />
     <state x="488" y="252" key="Vcs.Push.Dialog.v2/0.0.2194.1194@0.0.2194.1194" timestamp="1591717170083" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587219014962">
       <screen x="0" y="23" width="1440" height="797" />
@@ -809,11 +810,11 @@
     </state>
     <state x="378" y="207" width="683" height="486" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586846937826" />
     <state x="504" y="248" width="911" height="584" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1591635370753" />
-    <state x="638" y="338" key="git4idea.merge.GitPullDialog" timestamp="1592881772478">
+    <state x="638" y="338" key="git4idea.merge.GitPullDialog" timestamp="1592881809119">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="479" y="282" key="git4idea.merge.GitPullDialog/0.0.1440.900@0.0.1440.900" timestamp="1592386920559" />
-    <state x="638" y="338" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592881772478" />
+    <state x="638" y="338" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592881809119" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1587219643331">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
