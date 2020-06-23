@@ -279,21 +279,7 @@
       <workItem from="1592230200964" duration="1933000" />
       <workItem from="1592291352584" duration="6590000" />
       <workItem from="1592577669343" duration="2000" />
-      <workItem from="1592881051365" duration="204000" />
-    </task>
-    <task id="LOCAL-00024" summary="update Rocket.md">
-      <created>1581858072286</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1581858072286</updated>
-    </task>
-    <task id="LOCAL-00025" summary="update Rocket.md">
-      <created>1581858428131</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1581858428131</updated>
+      <workItem from="1592881051365" duration="423000" />
     </task>
     <task id="LOCAL-00026" summary="rename package">
       <created>1581954761859</created>
@@ -624,7 +610,21 @@
       <option name="project" value="LOCAL" />
       <updated>1592388297996</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="update">
+      <created>1592881788620</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1592881788621</updated>
+    </task>
+    <task id="LOCAL-00074" summary="update">
+      <created>1592881815955</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1592881815955</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -677,6 +677,11 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add q736" />
@@ -711,16 +716,16 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1587221348872" />
-    <state x="404" y="60" key="CommitChangelistDialog2" timestamp="1592881788428">
+    <state x="404" y="60" key="CommitChangelistDialog2" timestamp="1592881815834">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="303" y="50" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1592388297859" />
-    <state x="404" y="60" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1592881788428" />
-    <state x="191" y="94" width="1152" height="720" key="DiffContextDialog" timestamp="1592881784892">
+    <state x="404" y="60" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1592881815834" />
+    <state x="191" y="94" width="1536" height="864" key="DiffContextDialog" timestamp="1592881996931">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1592386883631" />
-    <state x="191" y="94" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592881784892" />
+    <state x="191" y="94" width="1536" height="864" key="DiffContextDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592881996931" />
     <state x="143" y="78" width="1152" height="720" key="DiffContextDialog/0.23.1440.797@0.23.1440.797" timestamp="1588303139733" />
     <state width="2151" height="333" key="GridCell.Tab.0.bottom" timestamp="1592301525961">
       <screen x="0" y="0" width="2194" height="1194" />
@@ -787,11 +792,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1585223890241" />
-    <state x="427" y="228" key="Vcs.Push.Dialog.v2" timestamp="1592881789982">
+    <state x="427" y="228" key="Vcs.Push.Dialog.v2" timestamp="1592881816879">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1592388299499" />
-    <state x="427" y="228" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1592881789982" />
+    <state x="427" y="228" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1592881816879" />
     <state x="488" y="252" key="Vcs.Push.Dialog.v2/0.0.2194.1194@0.0.2194.1194" timestamp="1591717170083" />
     <state x="100" y="100" width="1240" height="700" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587219014962">
       <screen x="0" y="23" width="1440" height="797" />
@@ -810,11 +815,11 @@
     </state>
     <state x="378" y="207" width="683" height="486" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1586846937826" />
     <state x="504" y="248" width="911" height="584" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1591635370753" />
-    <state x="638" y="338" key="git4idea.merge.GitPullDialog" timestamp="1592881809119">
+    <state x="638" y="338" key="git4idea.merge.GitPullDialog" timestamp="1592881849587">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="479" y="282" key="git4idea.merge.GitPullDialog/0.0.1440.900@0.0.1440.900" timestamp="1592386920559" />
-    <state x="638" y="338" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592881809119" />
+    <state x="638" y="338" key="git4idea.merge.GitPullDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1592881849587" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1587219643331">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
