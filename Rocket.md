@@ -845,7 +845,7 @@ TCP是一个双向通信协议，通信双方都有能力发送信息，并接�
 3. 插入排序：将一个记录插入到已排序的有序表中，从而得到一个新的，记录数增1的有序表
 4. 快速排序：通过一趟排序将序列分成左右两部分，其中左半部分的的值均比右半部分的值小，然后再分别对左右部分的记录进行排序，直到整个序列有序。
 ```
-int partition(int a[],  int low, int high){
+int partition(int a[], int low, int high){
     int key = a[low];
     while( low < high ){
         while(low < high && a[high] >= key) high--;
