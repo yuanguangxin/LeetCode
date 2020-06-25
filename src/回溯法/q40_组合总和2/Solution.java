@@ -30,9 +30,7 @@ class Solution {
             if (!set.contains(candidates[i]) && target >= candidates[i]) {
                 stack.push(candidates[i]);
                 helper(candidates, target - candidates[i], i + 1, stack, res);
-                System.out.println(stack + "before");
                 stack.pop();
-                System.out.println(stack + "after");
                 set.add(candidates[i]);
             }
         }
