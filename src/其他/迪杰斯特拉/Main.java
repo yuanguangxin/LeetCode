@@ -1,4 +1,4 @@
-package 其他.abwl.q2;
+package 其他.迪杰斯特拉;
 
 import java.util.*;
 

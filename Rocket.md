@@ -82,6 +82,19 @@ Redis中setnx不支持设置过期时间，做分布式锁时要想避免某一�
 
 传统的LRU是使用栈的形式，每次都将最新使用的移入栈顶，但是用栈的形式会导致执行select *的时候大量非热点数据占领头部数据，所以需要改进。Redis每次按key获取一个值的时候，都会更新value中的lru字段为当前秒级别的时间戳。Redis初始的实现算法很简单，随机从dict中取出五个key,淘汰一个lru字段值最小的。在3.0的时候，又改进了一版算法，首先第一次随机选取的key都会放入一个pool中(pool的大小为16),pool中的key是按lru大小顺序排列的。接下来每次随机选取的keylru值必须小于pool中最小的lru才会继续放入，直到将pool放满。放满之后，每次如果有新的key需要放入，需要将pool中lru最大的一个key取出。淘汰的时候，直接从pool中选取一个lru最小的值然后将其淘汰。
 
+### Redis如何发现热点key
+
+1. 凭借经验，进行预估：例如提前知道了某个活动的开启，那么就将此Key作为热点Key。
+2. 服务端收集：在操作redis之前，加入一行代码进行数据统计。
+3. 抓包进行评估：Redis使用TCP协议与客户端进行通信，通信协议采用的是RESP，所以自己写程序监听端口也能进行拦截包进行解析。
+4. 在proxy层，对每一个 redis 请求进行收集上报。
+5. Redis自带命令查询：Redis4.0.4版本提供了redis-cli –hotkeys就能找出热点Key。（如果要用Redis自带命令查询时，要注意需要先把内存逐出策略设置为allkeys-lfu或者volatile-lfu，否则会返回错误。进入Redis中使用config set maxmemory-policy allkeys-lfu即可。）
+
+### Redis的热点key解决方案
+
+1. 服务端缓存：即将热点数据缓存至服务端的内存中.(利用Redis自带的消息通知机制来保证Redis和服务端热点Key的数据一致性，对于热点Key客户端建立一个监听，当热点Key有更新操作的时候，服务端也随之更新。)
+2. 备份热点Key：即将热点Key+随机数，随机分配至Redis其他节点中。这样访问热点key的时候就不会全部命中到一台机器上了。
+
 ### 如何解决 Redis 缓存雪崩问题
 
 1. 使用 Redis 高可用架构：使用 Redis 集群来保证 Redis 服务不会挂掉
@@ -181,6 +194,13 @@ SQL的执行顺序：from---where--group by---having---select---order by
 4. binlog不是循环使用，在写满或者重启之后，会生成新的binlog文件，redolog是循环使用。
 5. binlog可以作为恢复数据使用，主从复制搭建，redolog作为异常宕机或者介质故障后的数据恢复使用。
 
+### Mysql读写分离以及主从同步
+
+1. 原理：主库将变更写binlog日志，然后从库连接到主库后，从库有一个IO线程，将主库的binlog日志拷贝到自己本地，写入一个中继日志中，接着从库中有一个sql线程会从中继日志读取binlog，然后执行binlog日志中的内容，也就是在自己本地再执行一遍sql，这样就可以保证自己跟主库的数据一致。
+2. 问题：这里有很重要一点，就是从库同步主库数据的过程是串行化的，也就是说主库上并行操作，在从库上会串行化执行，由于从库从主库拷贝日志以及串行化执行sql特点，在高并发情况下，从库数据一定比主库慢一点，是有延时的，所以经常出现，刚写入主库的数据可能读不到了，要过几十毫秒，甚至几百毫秒才能读取到。还有一个问题，如果突然主库宕机了，然后恰巧数据还没有同步到从库，那么有些数据可能在从库上是没有的，有些数据可能就丢失了。所以mysql实际上有两个机制，一个是半同步复制，用来解决主库数据丢失问题，一个是并行复制，用来解决主从同步延时问题。
+3. 半同步复制：semi-sync复制，指的就是主库写入binlog日志后，就会将强制此时立即将数据同步到从库，从库将日志写入自己本地的relay log之后，接着会返回一个ack给主库，主库接收到至少一个从库ack之后才会认为写完成。
+4. 并发复制：指的是从库开启多个线程，并行读取relay log中不同库的日志，然后并行重放不同库的日志，这样库级别的并行。（将主库分库也可缓解延迟问题）
+                                                                                                                                                  
 ### Next-Key Lock
 
 InnoDB 采用 Next-Key Lock 解决幻读问题。在`insert into test(xid) values (1), (3), (5), (8), (11);`后，由于xid上是有索引的，该算法总是会去锁住索引记录。现在，该索引可能被锁住的范围如下：(-∞, 1], (1, 3], (3, 5], (5, 8], (8, 11], (11, +∞)。Session A（`select * from test where id = 8 for update`）执行后会锁住的范围：(5, 8], (8, 11]。除了锁住8所在的范围，还会锁住下一个范围，所谓Next-Key。
@@ -555,13 +575,11 @@ AQS有两个队列，同步对列和条件队列。同步队列依赖一个双�
 
 ThreadLoal 变量，线程局部变量，同一个 ThreadLocal 所包含的对象，在不同的 Thread 中有不同的副本。ThreadLocal 变量通常被private static修饰。当一个线程结束时，它所使用的所有 ThreadLocal 相对的实例副本都可被回收。
 
-一个线程内可以存在多个 ThreadLocal 对象，所以其实是 ThreadLocal 内部维护了一个 Map ，这个 Map 不是直接使用的 HashMap ，而是 ThreadLocal 实现的一个叫做 ThreadLocalMap 的静态内部类。而我们使用的 get()、set() 方法其实都是调用了这个ThreadLocalMap类对应的 get()、set() 方法。这个储值的Map并非ThreadLocal的成员变量，而是java.lang.Thread 类的成员变量。ThreadLocalMap实例是作为java.lang.Thread的成员变量存储的，每个线程有唯一的一个threadLocalMap。这个map以ThreadLocal对象为key，”线程局部变量”为值，所以一个线程下可以保存多个”线程局部变量”。对ThreadLocal的操作，实际委托给当前Thread，每个Thread都会有自己独立的ThreadLocalMap实例，存储的仓库是Entry[] table；Entry的key为ThreadLocal，value为存储内容；因此在并发环境下，对ThreadLocal的set或get，不会有任何问题。在线程池的情况下，处理完成后主动调用该业务treadLocal的remove()方法，将”线程局部变量”清空，避免本线程下次处理的时候依然存在旧数据。
-
-### ThreadLocal中的内存泄漏
-
-在ThreadLocal中内存泄漏是指ThreadLocalMap中的Entry中的key为null，而value不为null。因为key为null导致value一直访问不到，而根据可达性分析导致在垃圾回收的时候进行可达性分析的时候,value可达从而不会被回收掉，但是该value永远不能被访问到，这样就存在了内存泄漏。如果 key 是强引用，那么发生 GC 时 ThreadLocalMap 还持有 ThreadLocal 的强引用，会导致 ThreadLocal 不会被回收，从而导致内存泄漏。弱引用 ThreadLocal 不会内存泄漏，对应的 value 在下一次 ThreadLocalMap 调用 set、get、remove 方法时被清除，这算是最优的解决方案。
+一个线程内可以存在多个 ThreadLocal 对象，所以其实是 ThreadLocal 内部维护了一个 Map ，这个 Map 不是直接使用的 HashMap ，而是 ThreadLocal 实现的一个叫做 ThreadLocalMap 的静态内部类。而我们使用的 get()、set() 方法其实都是调用了这个ThreadLocalMap类对应的 get()、set() 方法。这个储值的Map并非ThreadLocal的成员变量，而是java.lang.Thread 类的成员变量。ThreadLocalMap实例是作为java.lang.Thread的成员变量存储的，每个线程有唯一的一个threadLocalMap。这个map以ThreadLocal对象为key，”线程局部变量”为值，所以一个线程下可以保存多个”线程局部变量”。对ThreadLocal的操作，实际委托给当前Thread，每个Thread都会有自己独立的ThreadLocalMap实例，存储的仓库是Entry[] table；Entry的key为ThreadLocal，value为存储内容；因此在并发环境下，对ThreadLocal的set或get，不会有任何问题。由于Tomcat线程池的原因，我最初使用的”线程局部变量”保存的值，在下一次请求依然存在（同一个线程处理），这样每次请求都是在本线程中取值。所以在线程池的情况下，处理完成后主动调用该业务treadLocal的remove()方法，将”线程局部变量”清空，避免本线程下次处理的时候依然存在旧数据。
 
 ### ThreadLocal为什么要使用弱引用和内存泄露问题
+
+在ThreadLocal中内存泄漏是指ThreadLocalMap中的Entry中的key为null，而value不为null。因为key为null导致value一直访问不到，而根据可达性分析导致在垃圾回收的时候进行可达性分析的时候,value可达从而不会被回收掉，但是该value永远不能被访问到，这样就存在了内存泄漏。如果 key 是强引用，那么发生 GC 时 ThreadLocalMap 还持有 ThreadLocal 的强引用，会导致 ThreadLocal 不会被回收，从而导致内存泄漏。弱引用 ThreadLocal 不会内存泄漏，对应的 value 在下一次 ThreadLocalMap 调用 set、get、remove 方法时被清除，这算是最优的解决方案。
 
 Map中的key为一个threadlocal实例.如果使用强引用，当ThreadLocal对象（假设为ThreadLocal@123456）的引用被回收了，ThreadLocalMap本身依然还持有ThreadLocal@123456的强引用，如果没有手动删除这个key，则ThreadLocal@123456不会被回收，所以只要当前线程不消亡，ThreadLocalMap引用的那些对象就不会被回收，可以认为这导致Entry内存泄漏。
 
