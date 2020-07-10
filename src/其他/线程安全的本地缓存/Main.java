@@ -11,7 +11,8 @@ public class Main {
     Map<Object, Object> cache = new ConcurrentHashMap<>();
 
     public static Object load(Object key) {
-        return key + "load";
+        String value = key + "：value";
+        return value;
     }
 
     public Object get(Object key) {
