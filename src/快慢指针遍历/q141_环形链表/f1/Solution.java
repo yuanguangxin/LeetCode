@@ -1,4 +1,4 @@
-package hash相关.q141_环形链表.f1;
+package 快慢指针遍历.q141_环形链表.f1;
 
 import java.util.HashSet;
 import java.util.Set;
