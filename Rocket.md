@@ -963,7 +963,7 @@ public class Test {
 6. 希尔排序：先将整个待排记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录基本有序时再对全体记录进行一次直接插入排序。
 7. 归并排序：把有序表划分成元素个数尽量相等的两半，把两半元素分别排序，两个有序表合并成一个
 
-## 实际问题
+## 其他
 
 ### 高并发系统的设计与实现
 
@@ -992,7 +992,7 @@ public class Test {
 update products set quantity = quantity-1 WHERE id=3;
 select quantity from products WHERE id=3 for update;
 ```
-1. update语句在更新的同时加上一个条件
+3. update语句在更新的同时加上一个条件
 ```
 quantity = select quantity from products WHERE id=3;
 update products set quantity = ($quantity-1) WHERE id=3 and queantity = $quantity;
