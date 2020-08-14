@@ -1,5 +1,8 @@
 package 链表操作.q25_k个一组翻转链表;
 
+/**
+ * 难点在于返回每个部分被修改的头节点，新建一个头节点的前置节点 o(n)
+ */
 public class Solution {
 
     public ListNode reverseKGroup(ListNode head, int k) {
