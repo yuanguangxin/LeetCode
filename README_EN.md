@@ -39,10 +39,6 @@
 
 - [Question 56 : Merge Intervals](/src/区间合并/q56_合并区间)
 
-### Trie
-
-- [Question 648 : Replace Words](/src/字典树/q648_单词替换)
-
 ### String Manipulation
 
 - [Question 6 : ZigZag Conversion](/src/字符串操作/q6_Z字形变换)
@@ -113,6 +109,10 @@
 - [Question 22 : Generate Parentheses](/src/回溯法/q22_括号生成)
 - [Question 40 : Combination Sum II](/src/回溯法/q40_组合总和2)
 - [Question 46 : Permutations](/src/回溯法/q46_全排列)
+
+### Trie
+
+- [Question 648 : Replace Words](/src/字典树/q648_单词替换)
 
 ### Tree Traversal
 
