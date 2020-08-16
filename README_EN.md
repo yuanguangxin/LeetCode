@@ -2,7 +2,7 @@
 
 > [中文版](/README.md)
 
-## Subject Category
+## Topics
 
 ### Hash
 
