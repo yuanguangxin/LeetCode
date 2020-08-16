@@ -18,7 +18,7 @@
 - [Question 138 : Copy List with Random Pointer](/src/链表操作/q138_复制带随机指针的链表)
 - [Question 206 : Reverse Linked List](/src/链表操作/q206_反转链表)
 
-### Double Pointer Traversal / Sliding Window
+### Two Pointers Traversal / Sliding Window
 
 - [Question 3 : Longest Substring Without Repeating Characters](/src/双指针遍历/q3_无重复字符的最长子串)
 - [Question 11 : Container With Most Water](/src/双指针遍历/q11_盛最多水的容器)
@@ -29,7 +29,7 @@
 - [Question 121 : Best Time to Buy and Sell Stock](/src/双指针遍历/q121_买卖股票的最佳时机)
 - [Question 209 : Minimum Size Subarray Sum](/src/双指针遍历/q209_长度最小的子数组)
 
-### Fast and Slow Pointer Traversal
+### Fast and Slow Pointers Traversal
 
 - [Question 141 : Linked List Cycle](/src/快慢指针遍历/q141_环形链表)
 - [Question 202 : Happy Number](/src/快慢指针遍历/q202_快乐数)
@@ -38,6 +38,10 @@
 ### Interval Merge
 
 - [Question 56 : Merge Intervals](/src/区间合并/q56_合并区间)
+
+### Trie
+
+- [Question 648 : Replace Words](/src/字典树/q648_单词替换)
 
 ### String Manipulation
 
@@ -118,7 +122,7 @@
 - [Question 144 : Binary Tree Preorder Traversal](/src/树的遍历/q144_二叉树的前序遍历)
 - [Question 145 : Binary Tree Postorder Traversal](/src/树的遍历/q145_二叉树的后序遍历)
 
-### Binary Search Trees
+### Binary Search Tree
 
 - [Question 98 : Validate Binary Search Tree](/src/二叉搜索树相关/q98_验证二叉搜索树)
 - [Question 450 : Delete Node in a BST](/src/二叉搜索树相关/q450_删除二叉搜索树中的节点)
