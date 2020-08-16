@@ -126,6 +126,6 @@
 
 ---
 
-## Interview questions finishing(CN)
+## Interview Questions Collection (CN)
 
-- [Interview Questions Finishing](/Rocket.md)
+- [Interview Questions Collection](/Rocket.md)
