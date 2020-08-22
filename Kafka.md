@@ -9,6 +9,20 @@
 ####  Log Compaction 策略来删除位移主题中的过期消息: The idea behind log compaction is selectively remove records where we have most recent update with the same primary key. 
 
 ### 生产者压缩算法面面观
+1. Producer
+props.put("compression.type", "gzip");
+
+2. Broker
+情况一 Broker 端指定了和 Producer 端不同的压缩算法。
+情况二 Broker 端发生了消息格式转换
+
+3. Consumer
+Kafka 会将启用了哪种压缩算法封装进消息集合中，这样当 Consumer 读取到消息集合时，它自然就知道了这些消息使用的是哪种压缩算法
+
+Producer 端压缩、Broker 端保持、Consumer 端解压缩。
+
+在实际使用中，GZIP、Snappy、LZ4 甚至是 zstd 的表现各有千秋。但对于 Kafka 而言，它们的性能测试结果却出奇得一致，即在吞吐量方面：LZ4 > Snappy > zstd 和 GZIP；而在压缩比方面，zstd > LZ4 > GZIP > Snappy。
+
 
 ### 生产者消息分区机制原理剖析
 1. org.apache.kafka.clients.producer.Partitioner
