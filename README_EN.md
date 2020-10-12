@@ -84,6 +84,7 @@
 - [Question 104 : Maximum Depth of Binary Tree](/src/递归/q104_二叉树的最大深度)
 - [Question 226 : Invert Binary Tree](/src/递归/q226_翻转二叉树)
 - [Question 236 : Lowest Common Ancestor of a Binary Tree](/src/递归/q236_二叉树的最近公共祖先)
+- [Question 1325 : Delete Leaves With a Given Value](/src/递归/q1325_删除给定值的叶子节点)
 
 ### Divide and Conquer / Dichotomy
 
