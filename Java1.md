@@ -28,7 +28,14 @@
   jmap -heap 1763  
 4. jstack 查看线程信息  
   jstack -l 1763  
-5. jcmd 执行 JVM 相关分析命令(整合命令)
+5. jcmd 执行 JVM 相关分析命令(整合命令)  
+  jcmd pid VM.version  
+  jcmd pid VM.flags  
+  jcmd pid VM.command_line 
+  jcmd pid VM.system_properties   
+  jcmd pid Thread.print  
+  jcmd pid GC.class_histogram  
+  jcmd pid GC.heap_info     
 6. jrunscript/jjs 执行 js 命令
 
 
