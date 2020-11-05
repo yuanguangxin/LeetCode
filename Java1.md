@@ -31,12 +31,16 @@
 5. jcmd 执行 JVM 相关分析命令(整合命令)  
   jcmd pid VM.version  
   jcmd pid VM.flags  
-  jcmd pid VM.command_line 
+  jcmd pid VM.command_line  
   jcmd pid VM.system_properties   
   jcmd pid Thread.print  
   jcmd pid GC.class_histogram  
   jcmd pid GC.heap_info     
-6. jrunscript/jjs 执行 js 命令
+6. jrunscript/jjs 执行 js 命令  
+  当curl命令用:   
+  jrunscript -e "cat('http://www.baidu.com')" 执行js脚本片段  
+  jrunscript -e "print('hello,kk.jvm'+1)" 执行js文件  
+  jrunscript -l js -f /XXX/XXX/test.js  
 
 
 
