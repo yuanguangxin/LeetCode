@@ -18,8 +18,18 @@
 6. 通过 ClassLoader 默认的 loadClass 方法，也不会触发初始化动作(加载了，但是 不初始化)。
 ### JVM 命令行工具
 jps/jinfo 查看 java 进程
+  jps/jps -lmv
 jstat 查看 JVM 内部 gc 相关信息
+  jstat -gc 1763 1000 100
+  每隔1000 ms，1000次
+  jstat -gcutil 1763 1000 1000（使用率）
 jmap 查看 heap 或类占用空间统计
+   jmap -histo 1763 
+   jmap -heap 1763
 jstack 查看线程信息
 jcmd 执行 JVM 相关分析命令(整合命令)
 jrunscript/jjs 执行 js 命令
+
+
+
+
