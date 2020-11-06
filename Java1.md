@@ -44,6 +44,8 @@
 7. JVM 图形化工具--jconsole  
    JVM 图形化工具--jvisualvm  
    JVM 图形化工具--jmc  
- 
-
+   
+### JVM
+Eden so s1 8:1:1
+由如下参数控制提升阈值 -XX:+MaxTenuringThreshold=15
 
