@@ -41,7 +41,9 @@
   jrunscript -e "cat('http://www.baidu.com')" 执行js脚本片段  
   jrunscript -e "print('hello,kk.jvm'+1)" 执行js文件  
   jrunscript -l js -f /XXX/XXX/test.js  
-
-
+7. JVM 图形化工具--jconsole  
+   JVM 图形化工具--jvisualvm  
+   JVM 图形化工具--jmc  
+ 
 
 
