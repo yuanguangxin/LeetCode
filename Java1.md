@@ -46,12 +46,12 @@
    JVM 图形化工具--jmc  
    
 ### JVM
-Eden so s1 8:1:1
-由如下参数控制提升阈值 -XX:+MaxTenuringThreshold=15
+Eden so s1 8:1:1  
+由如下参数控制提升阈值 -XX:+MaxTenuringThreshold=15  
 mark-and-sweep algorithm.  
-   The algorithm traverses all object references, starting with the GC roots, and marks every object found as alive.  
-   All of the heap memory that is not occupied by marked objects is reclaimed. It is simply marked as free, essentially swept free of unused objects.
-可以作为 GC Roots 的对象
+   The algorithm traverses all object references, starting with the GC roots, and marks every object found as alive.    
+   All of the heap memory that is not occupied by marked objects is reclaimed. It is simply marked as free, essentially swept free of unused objects.  
+可以作为 GC Roots 的对象  
 1. 当前正在执行的方法里的局部变量和输入参数  
 2. 活动线程(Active threads)  
 3. 所有类的静态字段(static field) 
