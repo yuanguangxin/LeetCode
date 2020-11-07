@@ -56,3 +56,13 @@ mark-and-sweep algorithm.
 2. 活动线程(Active threads)  
 3. 所有类的静态字段(static field) 
 4. JNI 引用
+
+停止-复制(mark-copy)  
+标记-清除(Mark-Sweep)  
+标记-整理(Mark-Compact)  
+分代收集算法(Generational Collection)  
+效率：复制算法>标记/整理算法>标记/清除算法（此处的效率只是简单的对比时间复杂度，实际情况不一定如此  
+内存整齐度：复制算法=标记/整理算法>标记/清除算法。  
+内存利用率：标记/整理算法=标记/清除算法>复制算法。 
+
+
