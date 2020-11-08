@@ -65,4 +65,18 @@ mark-and-sweep algorithm.
 内存整齐度：复制算法=标记/整理算法>标记/清除算法。  
 内存利用率：标记/整理算法=标记/清除算法>复制算法。 
 
+1. Parallel GC  
+-XX:+UseParallelGC
+2. Mostly Concurrent Mark and Sweep Garbage Collector  
+-XX:+UseConcMarkSweepGC
+3. G1 GC
+
+### NIO
+端口：进程  
+ip：计算机  
+
+
+
+
+
 
