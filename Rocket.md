@@ -984,6 +984,13 @@ public class Test {
 
 常见的限流算法有计数器、漏桶和令牌桶算法。漏桶算法在分布式环境中消息中间件或者Redis都是可选的方案。发放令牌的频率增加可以提升整体数据处理的速度，而通过每次获取令牌的个数增加或者放慢令牌的发放速度和降低整体数据处理速度。而漏桶不行，因为它的流出速率是固定的，程序处理速度也是固定的。
 
+### HTTPS和HTTP的区别主要如下
+
+1、https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。  
+2、http是超文本传输协议，信息是明文传输，  https则是具有安全性的ssl加密传输协议  
+3、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443
+
+
 ### 秒杀并发情况下库存为负数问题
 
 1. for update显示加锁
@@ -996,4 +1003,4 @@ select quantity from products WHERE id=3 for update;
 ```
 quantity = select quantity from products WHERE id=3;
 update products set quantity = ($quantity-1) WHERE id=3 and queantity = $quantity;
-```
+
