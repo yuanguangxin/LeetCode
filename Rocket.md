@@ -1005,6 +1005,9 @@ select的几大缺点：
 
 　　对于第三个缺点，epoll没有这个限制，它所支持的FD上限是最大可以打开文件的数目，这个数字一般远大于2048,举个例子,在1GB内存的机器上大约是10万左右，具体数目可以cat /proc/sys/fs/file-max察看,一般来说这个数目和系统内存关系很大。  
 
+### 乐观锁和悲观锁
+
+
 ### 秒杀并发情况下库存为负数问题
 
 1. for update显示加锁
@@ -1017,4 +1020,6 @@ select quantity from products WHERE id=3 for update;
 ```
 quantity = select quantity from products WHERE id=3;
 update products set quantity = ($quantity-1) WHERE id=3 and queantity = $quantity;
+
+# 
 
