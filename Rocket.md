@@ -294,10 +294,18 @@ MySQL为了保证ACID中的一致性和持久性，使用了WAL(Write-Ahead Logg
 1. 模糊查询 %like
 2. 索引列参与计算,使用了函数
 3. 非最左前缀顺序
-4. where对null判断 
+4. where单列索引对null判断 
 5. where不等于
 6. or操作有至少一个字段没有索引
 7. 需要回表的查询结果集过大（超过配置的范围）
+
+### 为什么Mysql数据库存储不建议使用NULL
+
+1. NOT IN子查询在有NULL值的情况下返回永远为空结果，查询容易出错。
+2. 索引问题，单列索引无法存储NULL值，where对null判断会不走索引。
+3. 如果在两个字段进行拼接（CONCAT函数），首先要各字段进行非null判断，否则只要任意一个字段为空都会造成拼接的结果为null
+4. 如果有 Null column 存在的情况下，count(Null column)需要格外注意，null 值不会参与统计。
+5. Null列需要更多的存储空间：需要一个额外的字节作为判断是否为NULL的标志位
 
 ### explain命令概要
 
@@ -631,6 +639,15 @@ CAS是英文单词CompareAndSwap的缩写，中文意思是：比较并替换。
 
 如果在这段期间它的值曾经被改成了B，后来又被改回为A，那CAS操作就会误认为它从来没有被改变过。Java并发包为了解决这个问题，提供了一个带有标记的原子引用类“AtomicStampedReference”，它可以通过控制变量值的版本来保证CAS的正确性。
 
+### Synchronized的四种使用方式
+
+1. synchronized(this)：当a线程执行到该语句时，锁住该语句所在对象object，其它线程无法访问object中的所有synchronized代码块。
+2. synchronized(obj)：锁住对象obj，其它线程对obj中的所有synchronized代码块的访问被阻塞。
+3. synchronized method()：与（1）类似，区别是（1）中线程执行到某方法中的该语句才会获得锁，而对方法加锁则是当方法调用时立刻获得锁。
+4. synchronized static method()：当线程执行到该语句时，获得锁，所有调用该方法的其它线程阻塞，但是这个类中的其它非static声明的方法可以访问，即使这些方法是用synchronized声明的，但是static声明的方法会被阻塞；注意，这个锁与对象无关。
+
+前三种方式加的是对象锁，但是如果（2）中obj是一个class类型的对象，那么加的是类锁，并且锁的范围比（4）还要大；如果该class类型的某个实例对象获得了类锁，那么该class类型的所有实例对象的synchronized代码块均无法访问。
+
 ### Synchronized和Lock的区别
 
 1. 首先synchronized是java内置关键字在jvm层面，Lock是个java类。
@@ -690,6 +707,16 @@ AQS有两个队列，同步对列和条件队列。同步队列依赖一个双�
 2. ThreadPoolExecutor.DiscardPolicy：丢弃任务，但是不抛出异常。
 3. ThreadPoolExecutor.DiscardOldestPolicy：丢弃队列最前面的任务，然后重新提交被拒绝的任务
 4. ThreadPoolExecutor.CallerRunsPolicy：由调用线程（提交任务的线程）处理该任务
+
+### 线程池的正确创建方式
+
+不能用Executors，newFixed和newSingle，因为队列无限大，容易造成耗尽资源和OOM，newCached和newScheduled最大线程数是Integer.MAX_VALUE，线程创建过多和OOM。应该通过ThreadPoolExecutor手动创建。
+
+### 线程提交submit()和execute()有什么区别
+
+1. submit()相比于excute()，支持callable接口，也可以获取到任务抛出来的异常
+2. 可以获取到任务返回结果
+3. 用submit()方法执行任务，用Future.get()获取异常
 
 ### 线程池的线程数量怎么确定
 
