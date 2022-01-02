@@ -14,16 +14,7 @@ public class Solution {
             if (k == nums.length && i == nums.length) {
                 break;
             }
-            if (sum == s) {
-                min = Math.min(k - i, min);
-                if (k < nums.length) {
-                    sum += nums[k];
-                    k++;
-                } else {
-                    sum -= nums[i];
-                    i++;
-                }
-            } else if (sum < s) {
+            if (sum < s) {
                 if (k == nums.length) {
                     break;
                 }
