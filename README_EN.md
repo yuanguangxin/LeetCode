@@ -16,6 +16,7 @@
 - [Question 25 : Reverse Nodes in k-Group](/src/链表操作/q25_k个一组翻转链表)
 - [Question 61 : Rotate List](/src/链表操作/q61_旋转链表)
 - [Question 138 : Copy List with Random Pointer](/src/链表操作/q138_复制带随机指针的链表)
+- [Question 160 : Intersection of Two Linked Lists](/src/链表操作/q160_相交链表)
 - [Question 206 : Reverse Linked List](/src/链表操作/q206_反转链表)
 
 ### Two Pointers Traversal / Sliding Window
