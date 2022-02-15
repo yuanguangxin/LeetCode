@@ -72,5 +72,8 @@ public class Solution {
 //        n2.right = n5;
 
         new Solution().deleteNode(root, 1);
+
+
+
     }
 }
