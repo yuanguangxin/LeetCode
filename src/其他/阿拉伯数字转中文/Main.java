@@ -8,12 +8,6 @@ public class Main {
     private static final char[] units = {'十', '百', '千', '万', '亿'};
     private static final StringBuilder ans = new StringBuilder();
 
-    /**
-     * 采用递归的方法将转换的结果存储到 ans 变量中, 注意 `万` 和 `亿` 在 units 数组中不是连续的, 所以
-     * 当数字达到5位数或9位数时, 我们分开讨论。
-     *
-     * @param num
-     */
     private static void intToChineseNum(int num) {
         String s = String.valueOf(num);
         char[] chars = s.toCharArray();
@@ -52,10 +46,5 @@ public class Main {
                 intToChineseNum(mod);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        Main.intToChineseNum(121399013);
-        System.out.println(ans.toString());
     }
 }
