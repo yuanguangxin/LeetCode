@@ -136,7 +136,3 @@
 ## 面试问题整理
 
 - [面试问题整理](/Rocket.md)
-
-## LeetCode会员优惠
-
-- [优惠开通LeetCode会员](https://leetcode.cn/premium/?promoChannel=yuanguangxin)
