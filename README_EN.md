@@ -54,6 +54,7 @@
 - [Question 43 : Multiply Strings](/src/数字操作/q43_字符串相乘)
 - [Question 172 : Factorial Trailing Zeroes](/src/数字操作/q172_阶乘后的零)
 - [Question 258 : Add Digits](/src/数字操作/q258_各位相加)
+- [Question 1920 : Build Array from Permutation](/src/数字操作/q1920_基于排列构建数组)
 
 ### Array Operations
 
